@@ -82,23 +82,14 @@ export const Navbar: React.FC<NavbarProps> = ({
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-7 text-[14px] font-medium text-gray-600">
-            <button
-              onClick={handleBrandClick}
-              id="nav-link-home"
-              className={`hover:text-[#133229] transition-colors py-1 cursor-pointer font-medium ${
-                currentView === 'home' ? 'text-[#133229] font-bold' : ''
-              }`}
-            >
-              Home
-            </button>
+          <nav className="hidden lg:flex items-center gap-6 text-[14px] font-medium text-gray-600">
             <button
               onClick={handleAboutClick}
               id="nav-link-about"
               className={`hover:text-[#133229] transition-colors py-1 cursor-pointer flex items-center gap-1.5 ${
                 currentView === 'about'
-                  ? 'text-emerald-700 font-bold bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200/70'
-                  : 'font-medium'
+                  ? 'text-emerald-700 font-bold bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200/70'
+                  : 'font-medium hover:text-emerald-700'
               }`}
             >
               <span>About Us</span>
@@ -108,69 +99,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </span>
               )}
             </button>
-            <a
-              href="#mission"
-              onClick={(e) => handleSectionLink(e, '#mission')}
-              id="nav-link-mission"
-              className="hover:text-[#133229] transition-colors py-1"
-            >
-              The Trust Gap
-            </a>
-            <a
-              href="#products"
-              onClick={(e) => handleSectionLink(e, '#products')}
-              id="nav-link-products"
-              className="hover:text-[#133229] transition-colors py-1"
-            >
-              The Stack
-            </a>
-            <a
-              href="#sdgs"
-              onClick={(e) => handleSectionLink(e, '#sdgs')}
-              id="nav-link-sdgs"
-              className="hover:text-[#133229] transition-colors py-1 flex items-center gap-1"
-            >
-              <span>Our SDGs</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-            </a>
-            <a
-              href="#farm"
-              onClick={(e) => handleSectionLink(e, '#farm')}
-              id="nav-link-farm"
-              className="hover:text-[#133229] transition-colors py-1"
-            >
-              Adubiaro Lab
-            </a>
-            <a
-              href="#pipeline"
-              onClick={(e) => handleSectionLink(e, '#pipeline')}
-              id="nav-link-pipeline"
-              className="hover:text-[#133229] transition-colors py-1"
-            >
-              Pipeline
-            </a>
-            <a
-              href="#calculator"
-              onClick={(e) => handleSectionLink(e, '#calculator')}
-              id="nav-link-calculator"
-              className="hover:text-[#133229] transition-colors py-1"
-            >
-              Economics
-            </a>
           </nav>
 
           {/* Action CTAs - Pill buttons with hover glow */}
           <div className="hidden sm:flex items-center gap-3">
-            <button
-              onClick={onOpenVerifier}
-              id="btn-nav-verify"
-              className="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-semibold text-[#133229] bg-emerald-50/80 hover:bg-emerald-100/80 rounded-full border border-emerald-200 transition-all duration-200"
-              title="Lookup cryptographic production proof"
-            >
-              <ShieldCheck className="w-4 h-4 text-emerald-600" />
-              <span>Verify Batch</span>
-            </button>
-
             <button
               onClick={onOpenContact}
               id="btn-nav-cta"
