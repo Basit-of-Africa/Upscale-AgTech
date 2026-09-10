@@ -298,7 +298,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               <Layers className="w-3.5 h-3.5 text-emerald-600" />
               <span>CORE SYSTEM ARCHITECTURE</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#133229] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-[#133229] tracking-tight">
               Four pillars powering our agricultural revolution.
             </h2>
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
@@ -358,7 +358,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               <Globe2 className="w-3.5 h-3.5 text-emerald-600" />
               <span>GLOBAL IMPACT COMMITMENTS</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#133229] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-[#133229] tracking-tight">
               Aligned with the United Nations SDGs.
             </h2>
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
@@ -404,7 +404,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               <Users className="w-3.5 h-3.5 text-emerald-600" />
               <span>LEADERSHIP & AGRONOMY TEAM</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#133229] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-[#133229] tracking-tight">
               Led by African innovators with hands-on field experience.
             </h2>
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
@@ -461,7 +461,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               <Calendar className="w-3.5 h-3.5 text-emerald-600" />
               <span>OUR JOURNEY</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#133229] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-[#133229] tracking-tight">
               Milestones on our path to resilient agriculture.
             </h2>
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
@@ -502,7 +502,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             <span>JOIN THE AGRICULTURAL REVOLUTION</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold max-w-2xl mx-auto tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal max-w-2xl mx-auto tracking-tight">
             Ready to partner or deploy with Smartel Agri-Tech?
           </h2>
 
