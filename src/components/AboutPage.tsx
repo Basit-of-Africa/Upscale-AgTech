@@ -1,23 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Sprout,
   ShieldCheck,
   Droplets,
   Award,
   Users,
-  TrendingUp,
   Globe2,
   CheckCircle2,
   ArrowRight,
   Sparkles,
-  Target,
   HeartHandshake,
   Leaf,
-  Sun,
   Layers,
   MapPin,
   Calendar,
-  ExternalLink,
   ChevronRight
 } from 'lucide-react';
 
@@ -32,8 +28,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({
   onOpenVerifier,
   onNavigateHome
 }) => {
-  const [activeTab, setActiveTab] = useState<'mission' | 'values' | 'sdgs' | 'milestones'>('mission');
-
   const stats = [
     {
       value: '90%',
@@ -292,84 +286,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             })}
           </div>
 
-        </div>
-      </section>
-
-      {/* The Genesis & Israel Smart's Mission */}
-      <section className="py-16 lg:py-20 border-t border-slate-200/60 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200/80 uppercase tracking-wider">
-                <Target className="w-3.5 h-3.5 text-emerald-600" />
-                <span>OUR STORY & PURPOSE</span>
-              </div>
-
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#133229] tracking-tight leading-tight">
-                Solving the twin crises of food scarcity and water depletion.
-              </h2>
-
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-                Across Sub-Saharan Africa, smallholder farmers produce over 70% of the continent’s food supply. Yet they face severe climate shocks: erratic rainfall, scorched topsoil, invasive pests, and prohibitive input costs.
-              </p>
-
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-                In 2022, social innovator <strong>Israel Smart</strong> set out to rethink agriculture from first principles. By decoupling food production from degraded topsoil and utilizing closed-loop hydroponics, Smartel demonstrated that high-nutrient produce can flourish using 90% less water—even in arid climates.
-              </p>
-
-              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3">
-                <p className="text-sm sm:text-base italic text-[#133229] font-medium leading-relaxed">
-                  “We cannot solve Africa’s food vulnerability through donor hand-wringing or speculative slide decks. It demands solar hardware that drastically cuts water consumption while giving smallholder farmers guaranteed commercial value.”
-                </p>
-                <div className="flex items-center gap-3 pt-2">
-                  <div className="w-10 h-10 rounded-full bg-emerald-700 text-white font-bold flex items-center justify-center text-sm">
-                    IS
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold text-[#133229]">Israel Smart</div>
-                    <div className="text-xs text-gray-500">Founder & Climate Innovator • .ORG Impact Awards Finalist</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-5">
-              <div className="card-elevation p-7 sm:p-9 bg-[#133229] text-white rounded-3xl border border-emerald-800/60 relative overflow-hidden space-y-6">
-                <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-300">
-                  <Award className="w-6 h-6" />
-                </div>
-
-                <div className="space-y-2">
-                  <span className="text-xs font-mono text-emerald-400 uppercase tracking-wider block font-bold">
-                    GLOBAL RECOGNITION
-                  </span>
-                  <h3 className="text-2xl font-extrabold text-white">
-                    2026 .ORG Impact Awards Finalist
-                  </h3>
-                  <p className="text-sm text-emerald-100/80 leading-relaxed">
-                    Nominated in the prestigious <em>Rising Star</em> category for groundbreaking achievements in soil-free hydroponic deployments, land restoration, and biodiversity stewardship across vulnerable communities.
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-emerald-800/60 space-y-3 text-xs text-emerald-100/90 font-medium">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>UN-Habitat Scroll of Honour Award Recognition</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Global Citizen Waislitz Impact Honoree</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Active Living Lab on 180 Ha in Osun State</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
         </div>
       </section>
 
