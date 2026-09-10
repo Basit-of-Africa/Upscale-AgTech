@@ -12,7 +12,10 @@ import {
   Radio, 
   Cpu, 
   QrCode, 
-  ArrowUpRight 
+  ArrowUpRight,
+  ShieldCheck,
+  CheckCircle2,
+  Lock
 } from 'lucide-react';
 
 export const TechStack: React.FC = () => {
@@ -25,112 +28,112 @@ export const TechStack: React.FC = () => {
   const [portalRole, setPortalRole] = useState<'manager' | 'lender'>('manager');
 
   return (
-    <section id="products" className="py-20 lg:py-28 border-b border-[#D6D0BE] bg-[#FAF8F4]">
+    <section id="products" className="py-20 lg:py-28 bg-[#F8FAF9] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-14">
-          <div className="text-xs font-mono font-semibold tracking-wider text-[#3E4B22] uppercase mb-3 flex items-center gap-2">
-            <span className="w-2 h-0.5 bg-[#3E4B22]" />
-            <span>THE INTEGRATED STACK</span>
+        <div className="max-w-3xl mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-xs font-bold tracking-wide uppercase mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+            <span>THE INTEGRATED AGTECH STACK</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] leading-tight font-medium text-[#1C1A15] tracking-tight">
-            Three tools. One working farm.
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#133229] tracking-tight leading-tight">
+            Three proprietary tools. One working commercial farm.
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#5C5748] leading-relaxed">
-            Built with Adubiaro Farms, for Adubiaro Farms first, before anywhere else. Each layer addresses a critical failure point in traditional farm record-keeping and climate resilience.
+          <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed font-normal">
+            Calibrated on Adubiaro Farms before any external release. Each layer solves a core operational failure point in sub-Saharan agricultural visibility, climate risk, and capital access.
           </p>
         </div>
 
-        {/* Filter / Focus pills */}
-        <div className="flex items-center gap-2 mb-8 font-mono text-xs overflow-x-auto pb-2">
-          <span className="text-[#8B8472] uppercase mr-2">Focus View:</span>
+        {/* Filter / Focus pills in Smartelco style */}
+        <div className="flex items-center gap-2 mb-10 overflow-x-auto pb-2 scrollbar-none">
+          <span className="text-xs font-bold uppercase tracking-wider text-gray-400 mr-2 shrink-0">Filter Layer:</span>
           <button
             onClick={() => setActiveTab('all')}
-            className={`px-3 py-1.5 border transition-colors ${
+            className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all shrink-0 ${
               activeTab === 'all'
-                ? 'bg-[#1C1A15] text-[#FAF8F4] border-[#1C1A15]'
-                : 'bg-[#ECE7DA] text-[#5C5748] border-[#D6D0BE] hover:text-[#1C1A15]'
+                ? 'bg-[#133229] text-white shadow-md shadow-emerald-950/20'
+                : 'bg-white text-gray-600 hover:bg-slate-100 border border-slate-200'
             }`}
           >
             Complete Stack Overview
           </button>
           <button
             onClick={() => setActiveTab('kulima')}
-            className={`px-3 py-1.5 border transition-colors ${
+            className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all shrink-0 ${
               activeTab === 'kulima'
-                ? 'bg-[#3E4B22] text-[#FAF8F4] border-[#3E4B22]'
-                : 'bg-[#ECE7DA] text-[#5C5748] border-[#D6D0BE] hover:text-[#1C1A15]'
+                ? 'bg-[#133229] text-white shadow-md shadow-emerald-950/20'
+                : 'bg-white text-gray-600 hover:bg-slate-100 border border-slate-200'
             }`}
           >
-            01 Kulima (Intelligence)
+            01 • Kulima Intelligence
           </button>
           <button
             onClick={() => setActiveTab('portal')}
-            className={`px-3 py-1.5 border transition-colors ${
+            className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all shrink-0 ${
               activeTab === 'portal'
-                ? 'bg-[#3E4B22] text-[#FAF8F4] border-[#3E4B22]'
-                : 'bg-[#ECE7DA] text-[#5C5748] border-[#D6D0BE] hover:text-[#1C1A15]'
+                ? 'bg-[#133229] text-white shadow-md shadow-emerald-950/20'
+                : 'bg-white text-gray-600 hover:bg-slate-100 border border-slate-200'
             }`}
           >
-            02 Farms Portal (Operations)
+            02 • Farms Portal (Cloud)
           </button>
           <button
             onClick={() => setActiveTab('trace')}
-            className={`px-3 py-1.5 border transition-colors ${
+            className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all shrink-0 ${
               activeTab === 'trace'
-                ? 'bg-[#BF7E27] text-[#FAF8F4] border-[#BF7E27]'
-                : 'bg-[#ECE7DA] text-[#5C5748] border-[#D6D0BE] hover:text-[#1C1A15]'
+                ? 'bg-amber-600 text-white shadow-md shadow-amber-900/20'
+                : 'bg-white text-gray-600 hover:bg-slate-100 border border-slate-200'
             }`}
           >
-            03 FarmTrace (Traceability)
+            03 • FarmTrace (Audit Ledger)
           </button>
         </div>
 
-        {/* Stack Grid Layout: Field-Plot Architecture */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        {/* Stack Grid Layout: High Elevation Dimensional Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           {/* Tool 1: KULIMA (Farm Intelligence) — Tall / Featured Card */}
           <div
-            className={`lg:col-span-6 bg-[#F4F1EA] border border-[#D6D0BE] p-6 sm:p-8 flex flex-col justify-between transition-all ${
-              activeTab === 'kulima' || activeTab === 'all' ? 'opacity-100 ring-2 ring-[#3E4B22]/30' : 'opacity-40'
+            className={`lg:col-span-6 card-elevation p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 ${
+              activeTab === 'kulima' || activeTab === 'all' ? 'opacity-100' : 'opacity-40 pointer-events-none'
             }`}
           >
             <div>
-              <div className="flex items-center justify-between gap-4 mb-4">
-                <span className="font-mono text-xs px-2.5 py-1 bg-[#E3E7D3] text-[#3E4B22] border border-[#CAD0BA] font-semibold">
-                  01 • Farm Intelligence
+              <div className="flex items-center justify-between gap-4 mb-5">
+                <span className="px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200/80">
+                  01 • Farm Intelligence Engine
                 </span>
-                <span className="font-mono text-[11px] text-[#7A7463] flex items-center gap-1">
-                  <Cpu className="w-3.5 h-3.5 text-[#3E4B22]" />
-                  ML + Sensor Fusion
+                <span className="text-xs text-gray-500 font-medium flex items-center gap-1.5 bg-slate-50 px-3 py-1 rounded-full border border-slate-200">
+                  <Cpu className="w-3.5 h-3.5 text-emerald-600" />
+                  Satellite & In-Situ Fusion
                 </span>
               </div>
 
-              <h3 className="font-serif text-3xl font-semibold text-[#1C1A15] mb-1">
+              <h3 className="text-3xl font-extrabold text-[#133229] mb-1">
                 Kulima
               </h3>
-              <div className="text-sm font-semibold text-[#3E4B22] font-mono mb-4">
-                Weather and land, turned into decisions
+              <div className="text-sm font-bold text-emerald-700 mb-4">
+                Weather, micro-climates, and soil telemetry — converted into decisive action
               </div>
 
-              <p className="text-[#5C5748] text-base leading-relaxed mb-6">
-                Takes external weather, geospatial, and seasonal data and turns it into planting-window guidance, dry-spell and flood-risk detection, and heat-stress warnings, each with a confidence score attached rather than false certainty.
+              <p className="text-gray-600 text-base leading-relaxed mb-6">
+                Synthesizes hyper-local weather models, multispectral Sentinel-2 NDVI canopy imagery, and sub-surface capacitive probes into predictive planting windows, dry-spell risk forecasting, and heat-stress warnings. Every recommendation includes a measurable confidence metric.
               </p>
 
               {/* Interactive Kulima Live Simulator */}
-              <div className="bg-[#FAF8F4] border border-[#D6D0BE] p-4 font-mono text-xs space-y-3.5">
-                <div className="flex items-center justify-between border-b border-[#ECE7DA] pb-2">
-                  <span className="text-[#7A7463] uppercase text-[10px]">CROP ADAPTATION MODEL</span>
-                  <div className="flex gap-1">
+              <div className="bg-slate-50 rounded-2xl p-5 border border-slate-200 space-y-4">
+                <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+                  <span className="text-gray-500 font-bold uppercase text-[11px] tracking-wider">CROP SEEDING MODEL</span>
+                  <div className="flex gap-1.5 bg-white p-1 rounded-lg border border-slate-200">
                     {(['maize', 'cassava', 'soya'] as const).map((crop) => (
                       <button
                         key={crop}
                         onClick={() => setCropSim(crop)}
-                        className={`px-2 py-0.5 uppercase text-[10px] ${
+                        className={`px-3 py-1 uppercase text-[10.5px] font-bold rounded-md transition-all ${
                           cropSim === crop
-                            ? 'bg-[#3E4B22] text-[#FAF8F4] font-semibold'
-                            : 'bg-[#ECE7DA] text-[#5C5748]'
+                            ? 'bg-[#133229] text-white shadow-xs'
+                            : 'text-gray-500 hover:text-gray-900'
                         }`}
                       >
                         {crop}
@@ -139,106 +142,115 @@ export const TechStack: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-2 text-[11px]">
-                  <div className="bg-[#ECE7DA] p-2 border border-[#D6D0BE]">
-                    <span className="text-[#7A7463] block text-[10px]">PLANTING WINDOW</span>
-                    <strong className="text-[#1C1A15]">
-                      {cropSim === 'maize' ? 'May 16 - May 24' : cropSim === 'cassava' ? 'Late Rain Onset' : 'June 01 - June 10'}
+                <div className="grid grid-cols-2 gap-3 text-xs">
+                  <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs">
+                    <span className="text-gray-400 block text-[10px] font-bold uppercase tracking-wider">PLANTING WINDOW</span>
+                    <strong className="text-[#133229] font-bold text-sm block mt-0.5">
+                      {cropSim === 'maize' ? 'May 16 – May 24' : cropSim === 'cassava' ? 'Late Rain Onset' : 'June 01 – June 10'}
                     </strong>
                   </div>
-                  <div className="bg-[#ECE7DA] p-2 border border-[#D6D0BE]">
-                    <span className="text-[#7A7463] block text-[10px]">CONFIDENCE SCORE</span>
-                    <strong className="text-[#3E4B22]">
-                      {cropSim === 'maize' ? '91.4% (High)' : cropSim === 'cassava' ? '86.8% (Good)' : '94.1% (Optimal)'}
+                  <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs">
+                    <span className="text-gray-400 block text-[10px] font-bold uppercase tracking-wider">CONFIDENCE SCORE</span>
+                    <strong className="text-emerald-700 font-bold text-sm block mt-0.5">
+                      {cropSim === 'maize' ? '91.4% (Optimal)' : cropSim === 'cassava' ? '86.8% (Robust)' : '94.1% (Peak)'}
                     </strong>
                   </div>
                 </div>
 
                 {/* Risk Alerts */}
-                <div className="bg-[#E3E7D3]/60 p-2.5 border border-[#CAD0BA] text-[11px] space-y-1">
-                  <div className="flex items-center gap-1.5 font-semibold text-[#3E4B22]">
-                    <Activity className="w-3.5 h-3.5" />
-                    <span>In-situ Sensor Cross-Check (Osun Central)</span>
+                <div className="bg-emerald-50/80 p-3.5 rounded-xl border border-emerald-200/80 text-xs space-y-1">
+                  <div className="flex items-center gap-2 font-bold text-emerald-900">
+                    <Activity className="w-4 h-4 text-emerald-600" />
+                    <span>In-Situ Sensor Cross-Check (Osun Central)</span>
                   </div>
-                  <div className="text-[#5C5748]">
-                    Soil moisture 24.8% exceeds field capacity threshold for seed germination. Dry spell risk next 10 days evaluated at 12%.
+                  <div className="text-emerald-800 text-[11.5px] leading-relaxed">
+                    Root-zone moisture is at 25.6%, safely inside the optimum germination zone. 10-day dry spell probability stands at a low 11.8%.
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-[#D6D0BE] flex items-center justify-between text-xs font-mono text-[#5C5748]">
-              <span>Active in 4 micro-climates</span>
-              <span className="text-[#3E4B22] font-semibold">Calibrated with Adubiaro Probes</span>
+            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-gray-500">
+              <span>Active in 4 Guinea Savanna Micro-zones</span>
+              <span className="text-emerald-700 font-bold flex items-center gap-1">
+                <CheckCircle2 className="w-3.5 h-3.5" /> Calibrated with 180 Ha Field Probes
+              </span>
             </div>
           </div>
 
           {/* Right Column: Tools 2 & 3 */}
-          <div className="lg:col-span-6 space-y-8">
+          <div className="lg:col-span-6 space-y-8 flex flex-col justify-between">
             
             {/* Tool 2: FARMS PORTAL (Farm & Stakeholder Cloud) */}
             <div
-              className={`bg-[#F4F1EA] border border-[#D6D0BE] p-6 sm:p-8 transition-all ${
-                activeTab === 'portal' || activeTab === 'all' ? 'opacity-100 ring-2 ring-[#3E4B22]/30' : 'opacity-40'
+              className={`card-elevation p-7 sm:p-8 transition-all duration-300 ${
+                activeTab === 'portal' || activeTab === 'all' ? 'opacity-100' : 'opacity-40 pointer-events-none'
               }`}
             >
-              <div className="flex items-center justify-between gap-4 mb-3">
-                <span className="font-mono text-xs px-2.5 py-1 bg-[#E3E7D3] text-[#3E4B22] border border-[#CAD0BA] font-semibold">
-                  02 • Farm & Stakeholder Cloud
+              <div className="flex items-center justify-between gap-4 mb-4">
+                <span className="px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200/80">
+                  02 • Operational & Stakeholder Cloud
                 </span>
-                <div className="flex items-center gap-1 font-mono text-[10px] bg-[#ECE7DA] p-1 border border-[#D6D0BE]">
+                <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-[10.5px] font-bold">
                   <button
                     onClick={() => setPortalRole('manager')}
-                    className={`px-1.5 py-0.5 ${portalRole === 'manager' ? 'bg-[#1C1A15] text-[#FAF8F4]' : 'text-[#5C5748]'}`}
+                    className={`px-2.5 py-1 rounded-md transition-all ${
+                      portalRole === 'manager' ? 'bg-[#133229] text-white shadow-xs' : 'text-gray-600 hover:text-gray-900'
+                    }`}
                   >
-                    Mgr View
+                    Farm Manager
                   </button>
                   <button
                     onClick={() => setPortalRole('lender')}
-                    className={`px-1.5 py-0.5 ${portalRole === 'lender' ? 'bg-[#3E4B22] text-[#FAF8F4]' : 'text-[#5C5748]'}`}
+                    className={`px-2.5 py-1 rounded-md transition-all ${
+                      portalRole === 'lender' ? 'bg-emerald-700 text-white shadow-xs' : 'text-gray-600 hover:text-gray-900'
+                    }`}
                   >
-                    Bank/Off-taker
+                    Bank / Off-taker
                   </button>
                 </div>
               </div>
 
-              <h3 className="font-serif text-2xl font-semibold text-[#1C1A15] mb-1">
+              <h3 className="text-2xl font-extrabold text-[#133229] mb-1">
                 Farms Portal
               </h3>
-              <div className="text-sm font-semibold text-[#3E4B22] font-mono mb-3">
-                Where the operation is managed
+              <div className="text-sm font-bold text-emerald-700 mb-3">
+                Where real daily field operations meet institutional compliance
               </div>
 
-              <p className="text-[#5C5748] text-sm leading-relaxed mb-4">
-                Role-based dashboards for admins and farm managers to run day-to-day operations and reporting. Provides bank officers and industrial off-takers direct read-only visibility into verified field milestones.
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                Role-gated portal giving farm managers precise dispatch controls while giving agricultural credit officers, insurers, and FMCG buyers live read-only verification of crop progress.
               </p>
 
               {/* Portal preview strip */}
-              <div className="bg-[#FAF8F4] border border-[#D6D0BE] p-3 text-xs font-mono space-y-2">
-                <div className="flex items-center justify-between text-[11px] text-[#7A7463]">
-                  <span>ACTIVE VIEW: {portalRole === 'manager' ? 'FARM OPERATIONS & DISPATCH' : 'AUDIT & COMPLIANCE DESK'}</span>
-                  <span className="text-emerald-700">● Live Sync</span>
+              <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 text-xs space-y-2.5">
+                <div className="flex items-center justify-between text-[11px] font-bold text-gray-500">
+                  <span>ACTIVE DESK: {portalRole === 'manager' ? 'DISPATCH & AGRONOMY' : 'INSTITUTIONAL AUDIT & CREDIT'}</span>
+                  <span className="text-emerald-600 flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Live Sync
+                  </span>
                 </div>
                 {portalRole === 'manager' ? (
-                  <div className="space-y-1.5 text-[11px]">
-                    <div className="flex items-center justify-between bg-[#ECE7DA] p-1.5 border border-[#D6D0BE]">
-                      <span>Task #408: Apply Organic Foliar (Block A-1)</span>
-                      <span className="text-[#3E4B22] font-semibold">Completed</span>
+                  <div className="space-y-2 text-xs">
+                    <div className="flex items-center justify-between bg-white p-2.5 rounded-lg border border-slate-200">
+                      <span className="font-medium text-gray-800">Task #408: Apply Organic Foliar Spray (Block A-1)</span>
+                      <span className="text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded text-[11px]">Completed</span>
                     </div>
-                    <div className="flex items-center justify-between bg-[#ECE7DA] p-1.5 border border-[#D6D0BE]">
-                      <span>Task #409: Calibrate Weighbridge Node</span>
-                      <span className="text-[#BF7E27] font-semibold">In Progress</span>
+                    <div className="flex items-center justify-between bg-white p-2.5 rounded-lg border border-slate-200">
+                      <span className="font-medium text-gray-800">Task #409: Calibrate Weighbridge Transponder</span>
+                      <span className="text-amber-700 font-bold bg-amber-50 px-2 py-0.5 rounded text-[11px]">In Progress</span>
                     </div>
                   </div>
                 ) : (
-                  <div className="space-y-1.5 text-[11px]">
-                    <div className="flex items-center justify-between bg-[#ECE7DA] p-1.5 border border-[#D6D0BE]">
-                      <span>Grain Maize Lot #AF-2026-MZ9: 58.4 MT Verified</span>
-                      <span className="text-[#3E4B22] font-semibold">Bank Cleared</span>
+                  <div className="space-y-2 text-xs">
+                    <div className="flex items-center justify-between bg-white p-2.5 rounded-lg border border-slate-200">
+                      <span className="font-medium text-gray-800">Grain Maize Batch #AF-2026-MZ9: 58.4 MT Verified</span>
+                      <span className="text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded text-[11px]">Bank Cleared</span>
                     </div>
-                    <div className="flex items-center justify-between bg-[#ECE7DA] p-1.5 border border-[#D6D0BE]">
-                      <span>Satellite Crop Canopy Index: 0.78 NDVI</span>
-                      <span className="text-[#3E4B22] font-semibold">Normal</span>
+                    <div className="flex items-center justify-between bg-white p-2.5 rounded-lg border border-slate-200">
+                      <span className="font-medium text-gray-800">Satellite Canopy Stress Index: 0.81 NDVI</span>
+                      <span className="text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded text-[11px]">Optimal Health</span>
                     </div>
                   </div>
                 )}
@@ -247,42 +259,42 @@ export const TechStack: React.FC = () => {
 
             {/* Tool 3: FARMTRACE (Production Traceability) */}
             <div
-              className={`bg-[#F4F1EA] border border-[#D6D0BE] p-6 sm:p-8 transition-all ${
-                activeTab === 'trace' || activeTab === 'all' ? 'opacity-100 ring-2 ring-[#BF7E27]/40' : 'opacity-40'
+              className={`card-elevation p-7 sm:p-8 transition-all duration-300 ${
+                activeTab === 'trace' || activeTab === 'all' ? 'opacity-100' : 'opacity-40 pointer-events-none'
               }`}
             >
-              <div className="flex items-center justify-between gap-4 mb-3">
-                <span className="font-mono text-xs px-2.5 py-1 bg-[#FAF2E6] text-[#BF7E27] border border-[#E8D4B8] font-semibold">
-                  03 • Production Traceability
+              <div className="flex items-center justify-between gap-4 mb-4">
+                <span className="px-3 py-1 rounded-full bg-amber-50 text-amber-800 text-xs font-bold border border-amber-200/80">
+                  03 • Cryptographic Traceability
                 </span>
-                <span className="font-mono text-[10px] uppercase font-semibold text-[#BF7E27] bg-[#ECE7DA] px-2 py-0.5 border border-[#D6D0BE]">
-                  In Active Development
+                <span className="text-[10px] uppercase font-bold text-amber-800 bg-amber-100 px-2.5 py-1 rounded-full border border-amber-300">
+                  Living Lab Pilot
                 </span>
               </div>
 
-              <h3 className="font-serif text-2xl font-semibold text-[#1C1A15] mb-1">
+              <h3 className="text-2xl font-extrabold text-[#133229] mb-1">
                 FarmTrace
               </h3>
-              <div className="text-sm font-semibold text-[#BF7E27] font-mono mb-3">
-                What actually happened, recorded
+              <div className="text-sm font-bold text-amber-700 mb-3">
+                Immutable record of what actually happened on the ground
               </div>
 
-              <p className="text-[#5C5748] text-sm leading-relaxed mb-4">
-                A field-level record of planting, inputs, incidents, and harvest, built from the ground up as its own system. Replaces retroactive claims with cryptographic operator-signed event chains.
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                A seed-to-truck immutable audit trail replacing retroactive self-declarations with cryptographic, GPS-timestamped operator attestations that export directly into bank ESG and buyer compliance formats.
               </p>
 
               {/* Hash preview box */}
-              <div className="bg-[#FAF8F4] border border-[#D6D0BE] p-3 text-xs font-mono space-y-2">
-                <div className="flex items-center justify-between text-[10px] text-[#7A7463]">
-                  <span>IMMUTABLE LEDGER STREAM</span>
-                  <span className="text-[#BF7E27]">SHA-256 Proof</span>
+              <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 text-xs space-y-2">
+                <div className="flex items-center justify-between text-[11px] font-bold text-gray-500">
+                  <span>IMMUTABLE AUDIT RECORD</span>
+                  <span className="text-amber-700 font-mono">SHA-256 Verified</span>
                 </div>
-                <div className="text-[11px] text-[#1C1A15] bg-[#ECE7DA] p-2 border border-[#D6D0BE] truncate">
-                  HASH: 7f8a9e23c04d18bb8476231908bc449ea3b74962c03847b2
+                <div className="text-[11px] font-mono text-gray-800 bg-white p-2.5 rounded-lg border border-slate-200 truncate">
+                  SHA256: 7f8a9e23c04d18bb8476231908bc449ea3b74962c03847b2
                 </div>
-                <div className="flex items-center justify-between text-[11px] text-[#5C5748]">
-                  <span>Inputs verified: 4 of 4</span>
-                  <span className="text-[#3E4B22] font-semibold">0 Prohibited Chemicals</span>
+                <div className="flex items-center justify-between text-[11px] text-gray-600 pt-1">
+                  <span>Audited Inputs: 4 of 4 Verified</span>
+                  <span className="text-emerald-700 font-bold">0 Prohibited Chemicals</span>
                 </div>
               </div>
             </div>

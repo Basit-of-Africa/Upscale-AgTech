@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calculator, TrendingUp, ShieldAlert, Award, Clock, ArrowRight } from 'lucide-react';
+import { Calculator, TrendingUp, ShieldAlert, Award, Clock, ArrowRight, CheckCircle2, DollarSign } from 'lucide-react';
 
 interface ImpactCalculatorProps {
   onOpenContact: () => void;
@@ -25,37 +25,46 @@ export const ImpactCalculator: React.FC<ImpactCalculatorProps> = ({ onOpenContac
   const auditDaysSaved = currentSystem === 'paper' ? 21 : 14;
 
   return (
-    <section id="calculator" className="py-20 lg:py-28 border-b border-[#D6D0BE] bg-[#FAF8F4]">
+    <section id="calculator" className="py-20 lg:py-28 bg-[#F8FAF9] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-14">
-          <div className="text-xs font-mono font-semibold tracking-wider text-[#3E4B22] uppercase mb-3 flex items-center gap-2">
-            <span className="w-2 h-0.5 bg-[#3E4B22]" />
+        <div className="max-w-3xl mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-xs font-bold tracking-wide uppercase mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
             <span>ECONOMIC MODEL & RISK ESTIMATOR</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] leading-tight font-medium text-[#1C1A15] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#133229] tracking-tight leading-tight">
             Calculate your farm's bankability & trust dividend.
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#5C5748] leading-relaxed">
-            Proof has measurable economic value. See how automated verification turns production uncertainty into lower loan interest, off-taker quality bonuses, and zero audit friction.
+          <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed font-normal">
+            Verifiable proof yields concrete economic capital. Model how automated field telemetry converts seasonal uncertainty into preferential lending rates, off-taker quality bonuses, and immediate compliance clearance.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           {/* Controls Column */}
-          <div className="lg:col-span-6 bg-[#F4F1EA] border border-[#D6D0BE] p-6 sm:p-8 space-y-6">
-            <h3 className="font-serif text-xl font-semibold text-[#1C1A15] flex items-center gap-2">
-              <Calculator className="w-5 h-5 text-[#3E4B22]" />
-              <span>Farm Parameters</span>
-            </h3>
+          <div className="lg:col-span-6 card-elevation p-7 sm:p-9 space-y-7">
+            <div className="flex items-center justify-between">
+              <h3 className="text-xl font-bold text-[#133229] flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-xl bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-700">
+                  <Calculator className="w-5 h-5" />
+                </div>
+                <span>Farm Parameters</span>
+              </h3>
+              <span className="text-xs text-emerald-700 font-bold bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200/60">
+                Interactive Model
+              </span>
+            </div>
 
             {/* Hectares Slider */}
-            <div>
-              <div className="flex justify-between items-center font-mono text-xs mb-2">
-                <span className="text-[#7A7463] uppercase">CULTIVATED ACREAGE</span>
-                <strong className="text-base text-[#1C1A15]">{hectares} Hectares</strong>
+            <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+              <div className="flex justify-between items-center mb-3">
+                <span className="text-xs font-bold uppercase tracking-wider text-gray-500">CULTIVATED ACREAGE</span>
+                <span className="text-xl font-extrabold text-[#133229] bg-white px-3 py-1 rounded-lg border border-slate-200 shadow-xs">
+                  {hectares} <span className="text-xs font-medium text-gray-500">Hectares</span>
+                </span>
               </div>
               <input
                 type="range"
@@ -64,9 +73,9 @@ export const ImpactCalculator: React.FC<ImpactCalculatorProps> = ({ onOpenContac
                 step="5"
                 value={hectares}
                 onChange={(e) => setHectares(Number(e.target.value))}
-                className="w-full accent-[#3E4B22] cursor-pointer"
+                className="w-full accent-emerald-600 cursor-pointer h-2 bg-slate-200 rounded-lg"
               />
-              <div className="flex justify-between text-[11px] font-mono text-[#8B8472] mt-1">
+              <div className="flex justify-between text-xs font-semibold text-gray-400 mt-2">
                 <span>10 ha</span>
                 <span>100 ha</span>
                 <span>250 ha</span>
@@ -76,10 +85,10 @@ export const ImpactCalculator: React.FC<ImpactCalculatorProps> = ({ onOpenContac
 
             {/* Crop Selector */}
             <div>
-              <span className="text-[#7A7463] uppercase block font-mono text-xs mb-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-gray-500 block mb-3">
                 PRIMARY CROPPING COMMODITY
               </span>
-              <div className="grid grid-cols-3 gap-2 font-mono text-xs">
+              <div className="grid grid-cols-3 gap-2.5">
                 {(
                   [
                     { id: 'maize', label: 'Yellow Maize' },
@@ -91,10 +100,10 @@ export const ImpactCalculator: React.FC<ImpactCalculatorProps> = ({ onOpenContac
                     key={c.id}
                     type="button"
                     onClick={() => setCrop(c.id)}
-                    className={`p-2.5 border text-center transition-colors ${
+                    className={`py-3 px-3 rounded-xl text-center text-xs font-bold transition-all ${
                       crop === c.id
-                        ? 'bg-[#3E4B22] text-[#FAF8F4] border-[#3E4B22] font-semibold'
-                        : 'bg-[#FAF8F4] text-[#5C5748] border-[#D6D0BE] hover:text-[#1C1A15]'
+                        ? 'bg-[#133229] text-white shadow-md shadow-emerald-950/20 ring-2 ring-emerald-500/40'
+                        : 'bg-slate-50 text-gray-600 hover:bg-slate-100 border border-slate-200'
                     }`}
                   >
                     {c.label}
@@ -105,10 +114,10 @@ export const ImpactCalculator: React.FC<ImpactCalculatorProps> = ({ onOpenContac
 
             {/* Current System */}
             <div>
-              <span className="text-[#7A7463] uppercase block font-mono text-xs mb-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-gray-500 block mb-3">
                 CURRENT FIELD RECORD KEEPING
               </span>
-              <div className="grid grid-cols-3 gap-2 font-mono text-xs">
+              <div className="grid grid-cols-3 gap-2.5">
                 {(
                   [
                     { id: 'paper', label: 'Paper / WhatsApp' },
@@ -120,10 +129,10 @@ export const ImpactCalculator: React.FC<ImpactCalculatorProps> = ({ onOpenContac
                     key={s.id}
                     type="button"
                     onClick={() => setCurrentSystem(s.id)}
-                    className={`p-2.5 border text-center transition-colors ${
+                    className={`py-3 px-3 rounded-xl text-center text-xs font-bold transition-all ${
                       currentSystem === s.id
-                        ? 'bg-[#1C1A15] text-[#FAF8F4] border-[#1C1A15] font-semibold'
-                        : 'bg-[#FAF8F4] text-[#5C5748] border-[#D6D0BE] hover:text-[#1C1A15]'
+                        ? 'bg-[#133229] text-white shadow-md shadow-emerald-950/20 ring-2 ring-emerald-500/40'
+                        : 'bg-slate-50 text-gray-600 hover:bg-slate-100 border border-slate-200'
                     }`}
                   >
                     {s.label}
@@ -132,19 +141,24 @@ export const ImpactCalculator: React.FC<ImpactCalculatorProps> = ({ onOpenContac
               </div>
             </div>
 
-            <div className="p-3 bg-[#E3E7D3]/60 border border-[#CAD0BA] text-xs font-mono text-[#3E4B22]">
-              Benchmark calibrated with actual Adubiaro Farms multi-season data and grain buyer contracts in Osun, Oyo & Ogun States.
+            <div className="p-4 bg-emerald-50/80 rounded-xl border border-emerald-200/80 text-xs text-emerald-900 leading-relaxed font-medium flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+              <span>Calibrated against commercial grain contracts across Osun, Oyo, and Ogun States.</span>
             </div>
           </div>
 
-          {/* Results Column */}
-          <div className="lg:col-span-6 bg-[#E3E7D3] border border-[#CAD0BA] p-6 sm:p-8 flex flex-col justify-between">
-            <div>
-              <div className="flex items-center justify-between pb-4 mb-6 border-b border-[#CAD0BA]">
-                <div className="font-mono text-xs text-[#3E4B22] uppercase font-semibold">
-                  ESTIMATED TRUST & REVENUE DIVIDEND
+          {/* Results Column - Smartelco Dark Hero Styled Results Container */}
+          <div className="lg:col-span-6 rounded-[28px] bg-[#133229] text-white p-7 sm:p-9 flex flex-col justify-between shadow-2xl shadow-emerald-950/30 border border-emerald-800/50 relative overflow-hidden">
+            
+            {/* Background pattern */}
+            <div className="absolute inset-0 bg-radial-at-t from-emerald-500/10 to-transparent pointer-events-none" />
+
+            <div className="relative z-10">
+              <div className="flex items-center justify-between pb-4 mb-6 border-b border-white/15">
+                <div className="text-xs font-bold uppercase tracking-wider text-emerald-300">
+                  ESTIMATED TRUST & VALUE DIVIDEND
                 </div>
-                <div className="font-mono text-xs text-[#5C5748]">
+                <div className="text-xs text-emerald-100/70 font-mono">
                   Annual Season Projection
                 </div>
               </div>
@@ -153,52 +167,52 @@ export const ImpactCalculator: React.FC<ImpactCalculatorProps> = ({ onOpenContac
               <div className="space-y-4">
                 
                 {/* 1. Off-taker bonus */}
-                <div className="bg-[#FAF8F4] p-4 border border-[#CAD0BA]">
-                  <span className="font-mono text-[11px] text-[#7A7463] uppercase block">
+                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/15">
+                  <span className="text-[11px] font-bold text-emerald-300 uppercase tracking-wider block">
                     1. OFF-TAKER QUALITY & PROVENANCE BONUS
                   </span>
-                  <div className="text-2xl sm:text-3xl font-serif font-bold text-[#1C1A15] mt-1">
+                  <div className="text-3xl sm:text-4xl font-extrabold text-white mt-1">
                     +₦{offTakerPremiumNGN.toLocaleString()}
                   </div>
-                  <p className="text-xs font-mono text-[#5C5748] mt-1">
-                    Direct premium from verified pesticide compliance and moisture lock on {totalVolumeMT} MT.
+                  <p className="text-xs text-emerald-100/80 mt-1.5 leading-relaxed">
+                    Direct premium from verified moisture control, zero synthetic residue, and delivery lock on {totalVolumeMT} MT.
                   </p>
                 </div>
 
                 {/* 2. Fertilizer loss prevented */}
-                <div className="bg-[#FAF8F4] p-4 border border-[#CAD0BA]">
-                  <span className="font-mono text-[11px] text-[#7A7463] uppercase block">
-                    2. KULIMA WEATHER SAVINGS (INPUT PRESERVATION)
+                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/15">
+                  <span className="text-[11px] font-bold text-emerald-300 uppercase tracking-wider block">
+                    2. KULIMA CLIMATE SAVINGS (INPUT PRESERVATION)
                   </span>
-                  <div className="text-2xl sm:text-3xl font-serif font-bold text-[#3E4B22] mt-1">
+                  <div className="text-3xl sm:text-4xl font-extrabold text-emerald-400 mt-1">
                     +₦{fertilizerSavingsNGN.toLocaleString()}
                   </div>
-                  <p className="text-xs font-mono text-[#5C5748] mt-1">
-                    Saved by applying nitrogen strictly within dry-spell-safe windows across {hectares} ha.
+                  <p className="text-xs text-emerald-100/80 mt-1.5 leading-relaxed">
+                    Eliminated fertilizer leaching and volatilization through weather-synchronized nutrient dosing across {hectares} ha.
                   </p>
                 </div>
 
                 {/* 3. Underwriting Readiness */}
-                <div className="grid grid-cols-2 gap-3 font-mono text-xs">
-                  <div className="bg-[#FAF8F4] p-3 border border-[#CAD0BA]">
-                    <span className="text-[#7A7463] block text-[10px] uppercase">BANK LOAN ODDS</span>
-                    <strong className="text-sm text-[#1C1A15]">{bankApprovalOdds}</strong>
+                <div className="grid grid-cols-2 gap-3 text-xs">
+                  <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15">
+                    <span className="text-emerald-300 block text-[10px] font-bold uppercase tracking-wider">BANK LOAN CLEARANCE</span>
+                    <strong className="text-base text-white font-extrabold block mt-1">{bankApprovalOdds}</strong>
                   </div>
-                  <div className="bg-[#FAF8F4] p-3 border border-[#CAD0BA]">
-                    <span className="text-[#7A7463] block text-[10px] uppercase">AUDIT TIME SAVED</span>
-                    <strong className="text-sm text-[#3E4B22]">{auditDaysSaved} Days Saved</strong>
+                  <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15">
+                    <span className="text-emerald-300 block text-[10px] font-bold uppercase tracking-wider">AUDIT DURATION</span>
+                    <strong className="text-base text-emerald-400 font-extrabold block mt-1">{auditDaysSaved} Days Saved</strong>
                   </div>
                 </div>
 
               </div>
             </div>
 
-            <div className="pt-6 border-t border-[#CAD0BA] mt-6">
+            <div className="pt-6 border-t border-white/15 mt-6 relative z-10">
               <button
                 onClick={onOpenContact}
-                className="w-full py-3 px-6 bg-[#1C1A15] hover:bg-[#3E4B22] text-[#FAF8F4] font-semibold text-sm font-sans tracking-wide transition-colors flex items-center justify-center gap-2"
+                className="w-full py-4 px-6 bg-emerald-500 hover:bg-emerald-400 text-[#0B1E19] font-extrabold text-sm rounded-full shadow-lg shadow-emerald-500/25 hover:scale-[1.02] transition-all flex items-center justify-center gap-2"
               >
-                <span>Deploy Stack on Your Operation</span>
+                <span>Deploy AgTech Stack on Your Farm</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>

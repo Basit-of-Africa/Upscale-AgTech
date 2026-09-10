@@ -38,20 +38,20 @@ export const TrustPrinciples: React.FC = () => {
   ];
 
   return (
-    <section id="trust" className="py-20 lg:py-28 border-b border-[#D6D0BE] bg-[#F4F1EA]">
+    <section id="trust" className="py-20 lg:py-28 bg-[#F8FAF9] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
-          <div className="text-xs font-mono font-semibold tracking-wider text-[#3E4B22] uppercase mb-3 flex items-center gap-2">
-            <span className="w-2 h-0.5 bg-[#3E4B22]" />
+        <div className="max-w-3xl mb-14">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-xs font-bold tracking-wide uppercase mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
             <span>HOW WE THINK ABOUT TRUST</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] leading-tight font-medium text-[#1C1A15] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#133229] tracking-tight leading-tight">
             Built with a working farm, not around one.
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#5C5748] leading-relaxed">
-            Technology in African agriculture often fails because software creators confuse pitch decks with harvest realities. Our engineering principles reflect the uncompromising soil of Osun State.
+          <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed font-normal">
+            Technology in African agriculture often fails because creators confuse pitch decks with harvest realities. Our engineering principles reflect the uncompromising soil of Osun State.
           </p>
         </div>
 
@@ -62,27 +62,29 @@ export const TrustPrinciples: React.FC = () => {
             return (
               <div
                 key={p.num}
-                className="bg-[#FAF8F4] border border-[#D6D0BE] p-6 sm:p-7 flex flex-col justify-between hover:border-[#3E4B22] transition-colors"
+                className="card-elevation p-7 flex flex-col justify-between hover:-translate-y-1 hover:border-emerald-300 transition-all bg-white"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="font-serif text-lg font-bold text-[#3E4B22]">
+                  <div className="flex items-center justify-between mb-5">
+                    <span className="text-xl font-black text-emerald-700 bg-emerald-50 px-3 py-1 rounded-xl border border-emerald-200/60 font-mono">
                       {p.num}
                     </span>
-                    <Icon className="w-4 h-4 text-[#7A7463]" />
+                    <div className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-center text-gray-500">
+                      <Icon className="w-4 h-4 text-emerald-600" />
+                    </div>
                   </div>
 
-                  <h4 className="font-serif text-xl font-semibold text-[#1C1A15] mb-3">
+                  <h4 className="text-xl font-extrabold text-[#133229] mb-3">
                     {p.title}
                   </h4>
 
-                  <p className="text-[#5C5748] text-sm leading-relaxed mb-6">
+                  <p className="text-gray-600 text-sm leading-relaxed mb-6 font-normal">
                     {p.description}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-[#ECE7DA] font-mono text-[11px] text-[#3E4B22] flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
+                <div className="pt-4 border-t border-slate-100 text-xs text-emerald-800 flex items-center gap-2 font-semibold">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                   <span>{p.subtext}</span>
                 </div>
               </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Shield, Layers, Radio, Sparkles, ArrowDown, ExternalLink, CheckCircle2, MapPin } from 'lucide-react';
+import { Shield, Layers, Radio, Sparkles, ArrowRight, CheckCircle2, MapPin, Activity, Droplets, Satellite, TrendingUp } from 'lucide-react';
 import { FARM_PLOTS } from '../data/mockData';
 import { FarmPlot } from '../types';
 
@@ -13,345 +13,417 @@ export const Hero: React.FC<HeroProps> = ({ onOpenVerifierWithPlot, onOpenContac
   const [activeLayer, setActiveLayer] = useState<'cadastral' | 'ndvi' | 'sensors'>('cadastral');
 
   return (
-    <section id="hero" className="relative border-b border-[#D6D0BE] overflow-hidden">
-      {/* Subtle coordinate watermark */}
-      <div className="absolute top-8 right-8 font-mono text-[10px] text-[#A69F8B] uppercase tracking-widest hidden xl:block select-none pointer-events-none">
-        LAT 07°46'18"N • LON 04°34'02"E • OSUN CENTRAL GUINEAN SAVANNA
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <section id="hero" className="relative pt-4 pb-12 sm:pb-20 overflow-hidden bg-[#F8FAF9]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Cinematic Main Hero Container - Smartelco 28px rounded banner style */}
+        <div className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden min-h-[660px] lg:min-h-[720px] bg-[#133229] text-white shadow-2xl shadow-emerald-950/25 border border-emerald-800/40">
           
-          {/* Left Column: Editorial Copy */}
-          <div className="lg:col-span-6 xl:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#E3E7D3] border border-[#CAD0BA] text-[#3E4B22] text-xs font-mono font-medium tracking-wide">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#3E4B22] animate-pulse" />
-              <span>AGRICULTURAL TECHNOLOGY, BUILT ON REAL PRODUCTION</span>
-            </div>
-
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-[54px] leading-[1.08] font-medium tracking-tight text-[#1C1A15] max-w-2xl">
-              Software for farms that have to prove what actually happened.
-            </h1>
-
-            <p className="text-lg sm:text-xl text-[#5C5748] font-normal leading-relaxed max-w-xl">
-              Upscale Agro builds the technology layer that makes agricultural production measurable, intelligent, and verifiable, starting with one working farm, not a pitch deck.
-            </p>
-
-            {/* Value affirmations */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 font-mono text-xs text-[#5C5748]">
-              <div className="flex items-center gap-2 p-2.5 bg-[#FAF8F4] border border-[#D6D0BE]">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#3E4B22] shrink-0" />
-                <span>Zero synthetic yields</span>
-              </div>
-              <div className="flex items-center gap-2 p-2.5 bg-[#FAF8F4] border border-[#D6D0BE]">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#3E4B22] shrink-0" />
-                <span>Osun State living lab</span>
-              </div>
-              <div className="flex items-center gap-2 p-2.5 bg-[#FAF8F4] border border-[#D6D0BE]">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#3E4B22] shrink-0" />
-                <span>Auditable by banks</span>
-              </div>
-            </div>
-
-            {/* Action buttons */}
-            <div className="pt-4 flex flex-wrap items-center gap-4">
-              <a
-                href="#products"
-                id="hero-btn-stack"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#3E4B22] hover:bg-[#2F3918] text-[#FAF8F4] font-semibold text-sm tracking-wide border border-[#3E4B22] transition-colors shadow-xs"
-              >
-                <span>See the technology</span>
-                <ArrowDown className="w-4 h-4" />
-              </a>
-
-              <a
-                href="#farm"
-                id="hero-btn-farm"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-transparent hover:bg-[#1C1A15] text-[#1C1A15] hover:text-[#FAF8F4] font-semibold text-sm tracking-wide border border-[#1C1A15] transition-colors"
-              >
-                <span>Meet the founding farm</span>
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            </div>
-
-            {/* Farm footnote */}
-            <div className="pt-2 text-xs text-[#7A7463] font-mono flex items-center gap-2">
-              <MapPin className="w-3.5 h-3.5 text-[#BF7E27]" />
-              <span>Calibrated across 180 hectares at Adubiaro Farms, Osun State</span>
-            </div>
+          {/* Rich High-Resolution Agricultural Background with Smartelco Deep Green Gradient */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=2000&q=85"
+              alt="Lush agricultural field in Nigeria with modern smart farming technology"
+              className="w-full h-full object-cover object-center scale-105 opacity-35 filter saturate-125"
+            />
+            {/* Multi-stage dimensional gradient overlays */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0B1E19]/95 via-[#133229]/88 to-[#133229]/70" />
+            <div className="absolute inset-0 bg-radial-at-t from-emerald-500/15 via-transparent to-black/60" />
           </div>
 
-          {/* Right Column: Interactive Cadastral Telemetry Radar */}
-          <div className="lg:col-span-6 xl:col-span-5">
-            <div className="bg-[#FAF8F4] border border-[#D6D0BE] p-4 sm:p-6 shadow-sm relative">
+          {/* Floating Subtle Coordinate Stamp */}
+          <div className="absolute top-6 right-8 font-mono text-[11px] text-emerald-300/60 uppercase tracking-widest hidden lg:flex items-center gap-2 z-10 bg-white/5 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>OSUN CENTRAL GUINEAN SAVANNA • 07°46'N 04°34'E</span>
+          </div>
+
+          {/* Hero Inner Content */}
+          <div className="relative z-10 p-6 sm:p-10 lg:p-16 flex flex-col justify-between min-h-[660px] lg:min-h-[720px]">
+            
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center my-auto">
               
-              {/* Plot map header with layer toggles */}
-              <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#D6D0BE] flex-wrap gap-2">
-                <div className="flex items-center gap-2">
-                  <div className="w-2.5 h-2.5 bg-[#3E4B22] rounded-xs" />
-                  <span className="font-mono text-xs font-semibold tracking-tight text-[#1C1A15]">
-                    ADUBIARO FARMS CADASTRAL RADAR
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-1 bg-[#ECE7DA] p-1 border border-[#D6D0BE] text-[10px] font-mono">
-                  <button
-                    onClick={() => setActiveLayer('cadastral')}
-                    className={`px-2 py-0.5 transition-colors ${
-                      activeLayer === 'cadastral'
-                        ? 'bg-[#1C1A15] text-[#FAF8F4] font-semibold'
-                        : 'text-[#5C5748] hover:text-[#1C1A15]'
-                    }`}
-                  >
-                    Parcels
-                  </button>
-                  <button
-                    onClick={() => setActiveLayer('ndvi')}
-                    className={`px-2 py-0.5 transition-colors ${
-                      activeLayer === 'ndvi'
-                        ? 'bg-[#3E4B22] text-[#FAF8F4] font-semibold'
-                        : 'text-[#5C5748] hover:text-[#1C1A15]'
-                    }`}
-                  >
-                    NDVI Health
-                  </button>
-                  <button
-                    onClick={() => setActiveLayer('sensors')}
-                    className={`px-2 py-0.5 transition-colors ${
-                      activeLayer === 'sensors'
-                        ? 'bg-[#BF7E27] text-[#FAF8F4] font-semibold'
-                        : 'text-[#5C5748] hover:text-[#1C1A15]'
-                    }`}
-                  >
-                    IoT Probes
-                  </button>
-                </div>
-              </div>
-
-              {/* Interactive SVG Canvas */}
-              <div className="relative aspect-square w-full bg-[#EAE6DA] border border-[#D6D0BE] overflow-hidden select-none">
+              {/* Left Column: Bold Smartelco Typography & CTAs */}
+              <div className="lg:col-span-7 space-y-6">
                 
-                {/* SVG Farm Grid */}
-                <svg viewBox="0 0 320 320" className="w-full h-full">
-                  <defs>
-                    <pattern id="grid-pattern" width="20" height="20" patternUnits="userSpaceOnUse">
-                      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#D3CEBB" strokeWidth="0.5" />
-                    </pattern>
-                  </defs>
-
-                  <rect width="320" height="320" fill="url(#grid-pattern)" />
-
-                  {/* Parcel A-1: Maize */}
-                  <g
-                    className="cursor-pointer group"
-                    onClick={() => setSelectedPlot(FARM_PLOTS[0])}
-                  >
-                    <rect
-                      x="16"
-                      y="16"
-                      width="150"
-                      height="135"
-                      fill={
-                        activeLayer === 'ndvi'
-                          ? '#C6D89F'
-                          : selectedPlot.id === 'plot-a1'
-                          ? '#DDE3C4'
-                          : '#E3E7D3'
-                      }
-                      stroke={selectedPlot.id === 'plot-a1' ? '#3E4B22' : '#BDB7A3'}
-                      strokeWidth={selectedPlot.id === 'plot-a1' ? '2.5' : '1.2'}
-                      className="transition-all"
-                    />
-                    {/* Plot furrow lines */}
-                    <g stroke="#3E4B22" strokeWidth="0.8" opacity="0.4" strokeDasharray="3 3">
-                      <line x1="30" y1="35" x2="30" y2="135" />
-                      <line x1="55" y1="35" x2="55" y2="135" />
-                      <line x1="80" y1="35" x2="80" y2="135" />
-                      <line x1="105" y1="35" x2="105" y2="135" />
-                      <line x1="130" y1="35" x2="130" y2="135" />
-                    </g>
-                    <text x="24" y="36" className="font-mono text-[9px] fill-[#3E4B22] font-bold">
-                      BLOCK A-1
-                    </text>
-                    <text x="24" y="50" className="font-sans text-[10px] fill-[#1C1A15] font-semibold">
-                      Yellow Maize (14.5 ha)
-                    </text>
-                  </g>
-
-                  {/* Parcel B-2: Cassava */}
-                  <g
-                    className="cursor-pointer group"
-                    onClick={() => setSelectedPlot(FARM_PLOTS[1])}
-                  >
-                    <rect
-                      x="176"
-                      y="16"
-                      width="128"
-                      height="170"
-                      fill={
-                        activeLayer === 'ndvi'
-                          ? '#B2CA86'
-                          : selectedPlot.id === 'plot-b2'
-                          ? '#DDE3C4'
-                          : '#FAF8F4'
-                      }
-                      stroke={selectedPlot.id === 'plot-b2' ? '#3E4B22' : '#BDB7A3'}
-                      strokeWidth={selectedPlot.id === 'plot-b2' ? '2.5' : '1.2'}
-                      className="transition-all"
-                    />
-                    <text x="186" y="36" className="font-mono text-[9px] fill-[#3E4B22] font-bold">
-                      BED B-2
-                    </text>
-                    <text x="186" y="50" className="font-sans text-[10px] fill-[#1C1A15] font-semibold">
-                      Cassava TME 419 (18 ha)
-                    </text>
-                  </g>
-
-                  {/* Parcel C-3: Soya */}
-                  <g
-                    className="cursor-pointer group"
-                    onClick={() => setSelectedPlot(FARM_PLOTS[2])}
-                  >
-                    <rect
-                      x="16"
-                      y="160"
-                      width="150"
-                      height="144"
-                      fill={
-                        activeLayer === 'ndvi'
-                          ? '#A4C374'
-                          : selectedPlot.id === 'plot-c3'
-                          ? '#DDE3C4'
-                          : '#ECE7DA'
-                      }
-                      stroke={selectedPlot.id === 'plot-c3' ? '#3E4B22' : '#BDB7A3'}
-                      strokeWidth={selectedPlot.id === 'plot-c3' ? '2.5' : '1.2'}
-                      className="transition-all"
-                    />
-                    <text x="24" y="180" className="font-mono text-[9px] fill-[#3E4B22] font-bold">
-                      PLOT C-3
-                    </text>
-                    <text x="24" y="194" className="font-sans text-[10px] fill-[#1C1A15] font-semibold">
-                      Soya Trial (8.5 ha)
-                    </text>
-                  </g>
-
-                  {/* Parcel D-4: Agroforestry */}
-                  <g
-                    className="cursor-pointer group"
-                    onClick={() => setSelectedPlot(FARM_PLOTS[3])}
-                  >
-                    <rect
-                      x="176"
-                      y="196"
-                      width="128"
-                      height="108"
-                      fill={
-                        activeLayer === 'ndvi'
-                          ? '#8EAF5E'
-                          : selectedPlot.id === 'plot-d4'
-                          ? '#DDE3C4'
-                          : '#E3E7D3'
-                      }
-                      stroke={selectedPlot.id === 'plot-d4' ? '#3E4B22' : '#BDB7A3'}
-                      strokeWidth={selectedPlot.id === 'plot-d4' ? '2.5' : '1.2'}
-                      className="transition-all"
-                    />
-                    <text x="186" y="216" className="font-mono text-[9px] fill-[#3E4B22] font-bold">
-                      ZONE D-4
-                    </text>
-                    <text x="186" y="230" className="font-sans text-[10px] fill-[#1C1A15] font-semibold">
-                      Buffer & Soils (4 ha)
-                    </text>
-                  </g>
-
-                  {/* In-situ Sensor Probes */}
-                  {(activeLayer === 'sensors' || activeLayer === 'cadastral') && (
-                    <>
-                      {/* Node 1 */}
-                      <circle cx="85" cy="80" r="5" fill="#BF7E27" stroke="#FAF8F4" strokeWidth="1.5" className="animate-pulse" />
-                      <circle cx="85" cy="80" r="10" fill="none" stroke="#BF7E27" strokeWidth="0.8" opacity="0.6" />
-                      
-                      {/* Node 2 */}
-                      <circle cx="240" cy="100" r="5" fill="#BF7E27" stroke="#FAF8F4" strokeWidth="1.5" />
-                      
-                      {/* Node 3 */}
-                      <circle cx="90" cy="230" r="5" fill="#BF7E27" stroke="#FAF8F4" strokeWidth="1.5" />
-
-                      {/* Central Mast */}
-                      <rect x="166" y="152" width="8" height="8" fill="#1C1A15" />
-                      <circle cx="170" cy="156" r="2" fill="#FAF8F4" />
-                    </>
-                  )}
-                </svg>
-
-                {/* Status chip over canvas */}
-                <div className="absolute bottom-2 left-2 bg-[#1C1A15]/85 text-[#FAF8F4] px-2 py-1 text-[10px] font-mono flex items-center gap-1.5 backdrop-blur-xs">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                  <span>Click parcels to inspect live field telemetry</span>
-                </div>
-              </div>
-
-              {/* Selected Plot Telemetry Card */}
-              <div className="mt-4 pt-3 border-t border-[#D6D0BE] space-y-3">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <span className="font-mono text-xs text-[#BF7E27] font-semibold">
-                        {selectedPlot.id.toUpperCase()}
-                      </span>
-                      <span className="text-xs text-[#8B8472]">•</span>
-                      <h4 className="font-serif text-base font-semibold text-[#1C1A15]">
-                        {selectedPlot.name}
-                      </h4>
-                    </div>
-                    <div className="text-xs text-[#5C5748]">
-                      {selectedPlot.variety} ({selectedPlot.areaHa} Hectares)
-                    </div>
-                  </div>
-
-                  <div className="text-right">
-                    <span className="inline-block font-mono text-[11px] px-2 py-0.5 bg-[#E3E7D3] text-[#3E4B22] font-semibold border border-[#CAD0BA]">
-                      NDVI: {selectedPlot.healthScore}/100
-                    </span>
-                  </div>
-                </div>
-
-                {/* Plot metrics */}
-                <div className="grid grid-cols-3 gap-2 text-[11px] font-mono bg-[#ECE7DA] p-2.5 border border-[#D6D0BE]">
-                  <div>
-                    <span className="text-[#7A7463] block text-[10px]">SOIL MOISTURE</span>
-                    <strong className="text-[#1C1A15]">{selectedPlot.soilMoisture}%</strong>
-                  </div>
-                  <div>
-                    <span className="text-[#7A7463] block text-[10px]">RISK STATUS</span>
-                    <strong className="text-[#3E4B22]">{selectedPlot.riskLevel}</strong>
-                  </div>
-                  <div>
-                    <span className="text-[#7A7463] block text-[10px]">LEDGER PROOF</span>
-                    <strong className="text-[#1C1A15]">{selectedPlot.verificationHash}</strong>
-                  </div>
-                </div>
-
-                {/* Card footer CTA */}
-                <div className="flex items-center justify-between pt-1">
-                  <span className="text-[11px] text-[#5C5748] font-mono">
-                    Planting: {selectedPlot.plantingDate}
+                {/* Pill Tag */}
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-400/30 text-emerald-300 text-xs font-semibold tracking-wide">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
                   </span>
+                  <span>PRODUCTION-GRADE AGRICULTURAL INTELLIGENCE</span>
+                </div>
+
+                {/* Main Headline - Smartelco Scale & Weight */}
+                <h1 className="text-[36px] sm:text-[52px] lg:text-[64px] font-semibold leading-[1.08] tracking-[-0.02em] text-white">
+                  Software for farms that have to <span className="text-emerald-400">prove</span> what happened.
+                </h1>
+
+                {/* Subheading */}
+                <p className="text-base sm:text-lg text-emerald-100/80 font-normal leading-relaxed max-w-2xl">
+                  Upscale AgTech transforms real African agricultural production into measurable, bank-grade intelligence. From IoT root-zone sensors to tamper-proof audit ledgers — built on a living 180-hectare commercial farm, not a slide deck.
+                </p>
+
+                {/* Proof Pills */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs font-medium">
+                  <div className="flex items-center gap-2.5 p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-white">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>Zero Synthetic Yields</span>
+                  </div>
+                  <div className="flex items-center gap-2.5 p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-white">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>180 Ha Living Lab</span>
+                  </div>
+                  <div className="flex items-center gap-2.5 p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-white">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>Bank & Buyer Verifiable</span>
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="pt-4 flex flex-wrap items-center gap-4">
                   <button
-                    onClick={() => onOpenVerifierWithPlot(selectedPlot)}
-                    id="btn-inspect-plot-proof"
-                    className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-[#3E4B22] hover:text-[#1C1A15] transition-colors"
+                    onClick={onOpenContact}
+                    id="hero-btn-stack"
+                    className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-[#0B1E19] font-bold text-sm rounded-full shadow-lg shadow-emerald-500/25 hover:shadow-emerald-400/40 hover:scale-[1.02] transition-all duration-200"
                   >
-                    <Shield className="w-3.5 h-3.5" />
-                    <span>View Audit Certificate →</span>
+                    <span>Request Farm Pilot</span>
+                    <ArrowRight className="w-4 h-4" />
                   </button>
+
+                  <a
+                    href="#products"
+                    id="hero-btn-farm"
+                    className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold text-sm rounded-full backdrop-blur-md border border-white/20 transition-all duration-200"
+                  >
+                    <span>Explore The Stack</span>
+                  </a>
+                </div>
+
+                {/* Farm Footnote */}
+                <div className="pt-2 text-xs text-emerald-200/70 font-mono flex items-center gap-2">
+                  <MapPin className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Calibrated across 180 hectares at Adubiaro Farms in Osun State, Nigeria</span>
+                </div>
+
+              </div>
+
+              {/* Right Column: Floating Interactive Cadastral Radar & Telemetry Card */}
+              <div className="lg:col-span-5">
+                <div className="bg-white/95 backdrop-blur-xl rounded-[24px] p-5 sm:p-6 text-gray-900 shadow-2xl shadow-black/40 border border-white/40 relative">
+                  
+                  {/* Radar Card Header with Layer Toggles */}
+                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-gray-200/80 flex-wrap gap-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse" />
+                      <span className="font-sans text-xs font-bold tracking-tight text-[#133229]">
+                        ADUBIARO CADASTRAL RADAR
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-[10.5px] font-semibold">
+                      <button
+                        onClick={() => setActiveLayer('cadastral')}
+                        className={`px-2.5 py-1 rounded-md transition-all ${
+                          activeLayer === 'cadastral'
+                            ? 'bg-[#133229] text-white shadow-xs'
+                            : 'text-gray-600 hover:text-gray-900'
+                        }`}
+                      >
+                        Parcels
+                      </button>
+                      <button
+                        onClick={() => setActiveLayer('ndvi')}
+                        className={`px-2.5 py-1 rounded-md transition-all ${
+                          activeLayer === 'ndvi'
+                            ? 'bg-emerald-700 text-white shadow-xs'
+                            : 'text-gray-600 hover:text-gray-900'
+                        }`}
+                      >
+                        NDVI Health
+                      </button>
+                      <button
+                        onClick={() => setActiveLayer('sensors')}
+                        className={`px-2.5 py-1 rounded-md transition-all ${
+                          activeLayer === 'sensors'
+                            ? 'bg-amber-600 text-white shadow-xs'
+                            : 'text-gray-600 hover:text-gray-900'
+                        }`}
+                      >
+                        IoT Probes
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Interactive SVG Canvas with Real Aerial Style */}
+                  <div className="relative aspect-[4/3] w-full rounded-xl bg-slate-900 overflow-hidden select-none border border-slate-200">
+                    
+                    {/* Background satellite texture */}
+                    <div className="absolute inset-0 opacity-40 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:16px_16px]"></div>
+
+                    <svg viewBox="0 0 320 240" className="w-full h-full relative z-10">
+                      {/* Parcel A-1: Maize */}
+                      <g
+                        className="cursor-pointer group transition-transform"
+                        onClick={() => setSelectedPlot(FARM_PLOTS[0])}
+                      >
+                        <rect
+                          x="14"
+                          y="14"
+                          width="140"
+                          height="100"
+                          rx="6"
+                          fill={
+                            activeLayer === 'ndvi'
+                              ? '#059669'
+                              : selectedPlot.id === 'plot-a1'
+                              ? '#10b981'
+                              : '#064e3b'
+                          }
+                          fillOpacity={selectedPlot.id === 'plot-a1' ? '0.85' : '0.6'}
+                          stroke={selectedPlot.id === 'plot-a1' ? '#34d399' : '#047857'}
+                          strokeWidth={selectedPlot.id === 'plot-a1' ? '2.5' : '1.2'}
+                        />
+                        <text x="24" y="36" className="font-mono text-[10px] fill-white font-bold">
+                          BLOCK A-1
+                        </text>
+                        <text x="24" y="52" className="font-sans text-[11px] fill-emerald-100 font-medium">
+                          Yellow Maize (14.5 ha)
+                        </text>
+                        <text x="24" y="70" className="font-mono text-[9.5px] fill-emerald-300">
+                          SM: 25.6% • Healthy
+                        </text>
+                      </g>
+
+                      {/* Parcel B-2: Cassava */}
+                      <g
+                        className="cursor-pointer group"
+                        onClick={() => setSelectedPlot(FARM_PLOTS[1])}
+                      >
+                        <rect
+                          x="166"
+                          y="14"
+                          width="140"
+                          height="100"
+                          rx="6"
+                          fill={
+                            activeLayer === 'ndvi'
+                              ? '#10b981'
+                              : selectedPlot.id === 'plot-b2'
+                              ? '#10b981'
+                              : '#064e3b'
+                          }
+                          fillOpacity={selectedPlot.id === 'plot-b2' ? '0.85' : '0.5'}
+                          stroke={selectedPlot.id === 'plot-b2' ? '#34d399' : '#047857'}
+                          strokeWidth={selectedPlot.id === 'plot-b2' ? '2.5' : '1.2'}
+                        />
+                        <text x="176" y="36" className="font-mono text-[10px] fill-white font-bold">
+                          BED B-2
+                        </text>
+                        <text x="176" y="52" className="font-sans text-[11px] fill-emerald-100 font-medium">
+                          Cassava TME 419 (18 ha)
+                        </text>
+                        <text x="176" y="70" className="font-mono text-[9.5px] fill-emerald-300">
+                          SM: 28.4% • Robust
+                        </text>
+                      </g>
+
+                      {/* Parcel C-3: Soya */}
+                      <g
+                        className="cursor-pointer group"
+                        onClick={() => setSelectedPlot(FARM_PLOTS[2])}
+                      >
+                        <rect
+                          x="14"
+                          y="124"
+                          width="140"
+                          height="102"
+                          rx="6"
+                          fill={
+                            activeLayer === 'ndvi'
+                              ? '#34d399'
+                              : selectedPlot.id === 'plot-c3'
+                              ? '#10b981'
+                              : '#064e3b'
+                          }
+                          fillOpacity={selectedPlot.id === 'plot-c3' ? '0.85' : '0.45'}
+                          stroke={selectedPlot.id === 'plot-c3' ? '#34d399' : '#047857'}
+                          strokeWidth={selectedPlot.id === 'plot-c3' ? '2.5' : '1.2'}
+                        />
+                        <text x="24" y="146" className="font-mono text-[10px] fill-white font-bold">
+                          PLOT C-3
+                        </text>
+                        <text x="24" y="162" className="font-sans text-[11px] fill-emerald-100 font-medium">
+                          Soya Trial (8.5 ha)
+                        </text>
+                        <text x="24" y="180" className="font-mono text-[9.5px] fill-emerald-300">
+                          SM: 22.1% • Monitored
+                        </text>
+                      </g>
+
+                      {/* Parcel D-4: Buffer */}
+                      <g
+                        className="cursor-pointer group"
+                        onClick={() => setSelectedPlot(FARM_PLOTS[3])}
+                      >
+                        <rect
+                          x="166"
+                          y="124"
+                          width="140"
+                          height="102"
+                          rx="6"
+                          fill={
+                            activeLayer === 'ndvi'
+                              ? '#047857'
+                              : selectedPlot.id === 'plot-d4'
+                              ? '#10b981'
+                              : '#064e3b'
+                          }
+                          fillOpacity={selectedPlot.id === 'plot-d4' ? '0.85' : '0.4'}
+                          stroke={selectedPlot.id === 'plot-d4' ? '#34d399' : '#047857'}
+                          strokeWidth={selectedPlot.id === 'plot-d4' ? '2.5' : '1.2'}
+                        />
+                        <text x="176" y="146" className="font-mono text-[10px] fill-white font-bold">
+                          ZONE D-4
+                        </text>
+                        <text x="176" y="162" className="font-sans text-[11px] fill-emerald-100 font-medium">
+                          Buffer & Soils (4 ha)
+                        </text>
+                        <text x="176" y="180" className="font-mono text-[9.5px] fill-emerald-300">
+                          SM: 31.0% • Forested
+                        </text>
+                      </g>
+
+                      {/* In-situ Sensor Probes */}
+                      {(activeLayer === 'sensors' || activeLayer === 'cadastral') && (
+                        <>
+                          <circle cx="84" cy="64" r="5" fill="#f59e0b" stroke="#ffffff" strokeWidth="1.5" className="animate-pulse" />
+                          <circle cx="236" cy="64" r="5" fill="#f59e0b" stroke="#ffffff" strokeWidth="1.5" />
+                          <circle cx="84" cy="174" r="5" fill="#f59e0b" stroke="#ffffff" strokeWidth="1.5" />
+                          <circle cx="236" cy="174" r="5" fill="#f59e0b" stroke="#ffffff" strokeWidth="1.5" />
+                        </>
+                      )}
+                    </svg>
+
+                    {/* Interactive overlay tag */}
+                    <div className="absolute bottom-2 left-2 bg-black/70 backdrop-blur-md text-emerald-300 px-2.5 py-1 rounded-md text-[10px] font-mono flex items-center gap-1.5 border border-white/10">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                      <span>Click parcel to view live telemetry</span>
+                    </div>
+                  </div>
+
+                  {/* Selected Plot Details */}
+                  <div className="mt-4 pt-3 border-t border-slate-100 space-y-3">
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <span className="font-mono text-xs text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded">
+                            {selectedPlot.id.toUpperCase()}
+                          </span>
+                          <h4 className="font-sans text-base font-bold text-[#133229]">
+                            {selectedPlot.name}
+                          </h4>
+                        </div>
+                        <div className="text-xs text-gray-500 font-medium mt-0.5">
+                          {selectedPlot.variety} ({selectedPlot.areaHa} Hectares)
+                        </div>
+                      </div>
+
+                      <div className="text-right">
+                        <span className="inline-flex items-center gap-1 font-mono text-xs px-2.5 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-full border border-emerald-200">
+                          NDVI: {selectedPlot.healthScore}/100
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Metrics Grid */}
+                    <div className="grid grid-cols-3 gap-2 text-xs font-mono bg-slate-50 p-3 rounded-xl border border-slate-100">
+                      <div>
+                        <span className="text-gray-400 block text-[10px] font-sans font-medium">SOIL MOISTURE</span>
+                        <strong className="text-[#133229] font-bold text-sm">{selectedPlot.soilMoisture}%</strong>
+                      </div>
+                      <div>
+                        <span className="text-gray-400 block text-[10px] font-sans font-medium">RISK LEVEL</span>
+                        <strong className="text-emerald-700 font-bold text-sm">{selectedPlot.riskLevel}</strong>
+                      </div>
+                      <div>
+                        <span className="text-gray-400 block text-[10px] font-sans font-medium">LEDGER HASH</span>
+                        <strong className="text-[#133229] font-bold text-[11px] truncate block">{selectedPlot.verificationHash}</strong>
+                      </div>
+                    </div>
+
+                    {/* Verification Button */}
+                    <div className="flex items-center justify-between pt-1">
+                      <span className="text-[11px] text-gray-500 font-medium">
+                        Planted: {selectedPlot.plantingDate}
+                      </span>
+                      <button
+                        onClick={() => onOpenVerifierWithPlot(selectedPlot)}
+                        id="btn-inspect-plot-proof"
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 hover:text-emerald-800 transition-colors group"
+                      >
+                        <Shield className="w-3.5 h-3.5 text-emerald-600" />
+                        <span>Inspect Audit Proof →</span>
+                      </button>
+                    </div>
+                  </div>
+
                 </div>
               </div>
+
             </div>
+
           </div>
 
         </div>
+
+        {/* Smartelco-Grade Impact Ribbon (Dimensional floating cards) */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+          <div className="card-elevation p-5 flex flex-col justify-between">
+            <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 font-sans">
+              Living Lab Area
+            </span>
+            <div className="my-2">
+              <span className="text-3xl lg:text-4xl font-extrabold text-[#133229]">180</span>
+              <span className="text-emerald-600 text-lg font-bold ml-1">Ha</span>
+            </div>
+            <span className="text-xs text-gray-500">Continuous in-situ sensor verification in Osun State</span>
+          </div>
+
+          <div className="card-elevation p-5 flex flex-col justify-between">
+            <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 font-sans">
+              Traceability Rate
+            </span>
+            <div className="my-2">
+              <span className="text-3xl lg:text-4xl font-extrabold text-[#133229]">99.4</span>
+              <span className="text-emerald-600 text-lg font-bold ml-1">%</span>
+            </div>
+            <span className="text-xs text-gray-500">Seed-to-weighbridge cryptographic audit logging</span>
+          </div>
+
+          <div className="card-elevation p-5 flex flex-col justify-between">
+            <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 font-sans">
+              Resource Efficiency
+            </span>
+            <div className="my-2">
+              <span className="text-3xl lg:text-4xl font-extrabold text-[#133229]">42</span>
+              <span className="text-emerald-600 text-lg font-bold ml-1">%</span>
+            </div>
+            <span className="text-xs text-gray-500">Fertilizer & input waste eliminated by Kulima AI</span>
+          </div>
+
+          <div className="card-elevation p-5 flex flex-col justify-between">
+            <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 font-sans">
+              Credit De-risked
+            </span>
+            <div className="my-2">
+              <span className="text-3xl lg:text-4xl font-extrabold text-[#133229]">₦145</span>
+              <span className="text-emerald-600 text-lg font-bold ml-1">M+</span>
+            </div>
+            <span className="text-xs text-gray-500">Agricultural working capital unlocked with banks</span>
+          </div>
+        </div>
+
       </div>
     </section>
   );

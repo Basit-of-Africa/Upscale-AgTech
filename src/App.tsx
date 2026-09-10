@@ -29,7 +29,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F4F1EA] text-[#1C1A15] selection:bg-[#3E4B22] selection:text-[#FAF8F4]">
+    <div className="min-h-screen flex flex-col bg-[#F8FAF9] text-[#133229] selection:bg-emerald-600 selection:text-white font-sans">
       {/* Real-time Field Telemetry Stream */}
       <TelemetryTicker />
 

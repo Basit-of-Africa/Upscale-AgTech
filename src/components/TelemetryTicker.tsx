@@ -29,51 +29,53 @@ export const TelemetryTicker: React.FC = () => {
   return (
     <div
       id="telemetry-bar"
-      className="bg-[#ECE7DA] border-b border-[#D6D0BE] text-[12px] font-mono text-[#5C5748] py-2 overflow-x-auto select-none"
+      className="bg-[#0B1E19] border-b border-emerald-900/30 text-[11.5px] font-mono text-emerald-100/80 py-2.5 overflow-x-auto select-none"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6 min-w-[760px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6 min-w-[800px]">
         {/* Node status */}
-        <div className="flex items-center gap-2 flex-shrink-0">
+        <div className="flex items-center gap-2.5 flex-shrink-0">
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#3E4B22] opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#3E4B22]"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400 shadow-sm shadow-emerald-400/50"></span>
           </span>
-          <span className="font-semibold text-[#1C1A15] tracking-tight">
-            FIELD STATION: ADUBIARO FARMS (OSUN STATE)
+          <span className="font-semibold text-white tracking-tight flex items-center gap-1.5">
+            <span>LIVE LAB SENSOR MESH</span>
+            <span className="text-emerald-400/60">•</span>
+            <span className="text-emerald-300">ADUBIARO FARMS (OSUN, NG)</span>
           </span>
-          <span className="text-[#8B8472]">•</span>
-          <span className="text-[#5C5748]">07°46'N 04°34'E</span>
+          <span className="text-emerald-600/80">•</span>
+          <span className="text-emerald-400/70 text-[10.5px]">07°46'N 04°34'E</span>
         </div>
 
         {/* Live values */}
         <div className="flex items-center gap-5 text-[11px]">
-          <div className="flex items-center gap-1.5" title="Air Temperature">
-            <Thermometer className="w-3.5 h-3.5 text-[#BF7E27]" />
-            <span>{telemetry.temp}°C</span>
+          <div className="flex items-center gap-1.5 bg-white/5 px-2.5 py-1 rounded-md border border-white/10" title="Air Temperature">
+            <Thermometer className="w-3.5 h-3.5 text-amber-400" />
+            <span className="text-slate-200">{telemetry.temp}°C</span>
           </div>
 
-          <div className="flex items-center gap-1.5" title="Atmospheric Relative Humidity">
-            <Droplets className="w-3.5 h-3.5 text-[#3E4B22]" />
-            <span>RH {telemetry.humidity}%</span>
+          <div className="flex items-center gap-1.5 bg-white/5 px-2.5 py-1 rounded-md border border-white/10" title="Atmospheric Relative Humidity">
+            <Droplets className="w-3.5 h-3.5 text-cyan-400" />
+            <span className="text-slate-200">RH {telemetry.humidity}%</span>
           </div>
 
-          <div className="flex items-center gap-1.5" title="Root-Zone Soil Moisture (Plot A-1)">
-            <Activity className="w-3.5 h-3.5 text-[#3E4B22]" />
-            <span className="text-[#1C1A15] font-medium">SM {telemetry.soilMoisture}% (Optimal)</span>
+          <div className="flex items-center gap-1.5 bg-emerald-950/60 px-2.5 py-1 rounded-md border border-emerald-500/30" title="Root-Zone Soil Moisture (Plot A-1)">
+            <Activity className="w-3.5 h-3.5 text-emerald-400" />
+            <span className="text-emerald-300 font-medium">SM {telemetry.soilMoisture}% (Optimal)</span>
           </div>
 
-          <div className="flex items-center gap-1.5" title="Solar Irradiance (W/m²)">
-            <Sun className="w-3.5 h-3.5 text-[#BF7E27]" />
-            <span>{telemetry.solar} W/m²</span>
+          <div className="flex items-center gap-1.5 bg-white/5 px-2.5 py-1 rounded-md border border-white/10" title="Solar Irradiance (W/m²)">
+            <Sun className="w-3.5 h-3.5 text-amber-300" />
+            <span className="text-slate-200">{telemetry.solar} W/m²</span>
           </div>
 
-          <div className="flex items-center gap-1.5" title="Kulima Early Maize Planting Window Confidence">
-            <Satellite className="w-3.5 h-3.5 text-[#3E4B22]" />
-            <span>Kulima Index: <strong className="text-[#1C1A15]">{telemetry.confidence}%</strong></span>
+          <div className="flex items-center gap-1.5 bg-white/5 px-2.5 py-1 rounded-md border border-white/10" title="Kulima Early Maize Planting Window Confidence">
+            <Satellite className="w-3.5 h-3.5 text-emerald-400" />
+            <span className="text-slate-300">Kulima AI: <strong className="text-emerald-300">{telemetry.confidence}%</strong></span>
           </div>
 
-          <div className="flex items-center gap-1 text-[#3E4B22] font-semibold">
-            <CheckCircle2 className="w-3 h-3" />
+          <div className="flex items-center gap-1.5 text-emerald-400 font-semibold text-[10.5px]">
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
             <span>Synced {telemetry.syncSecondsAgo}s ago</span>
           </div>
         </div>
