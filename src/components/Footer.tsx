@@ -4,11 +4,34 @@ import { Shield, Radio, ArrowUp, Github, Mail, Globe, Sparkles, ArrowRight } fro
 interface FooterProps {
   onOpenVerifier: () => void;
   onOpenContact: () => void;
+  onNavigateAbout?: () => void;
+  onNavigateHome?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenVerifier, onOpenContact }) => {
+export const Footer: React.FC<FooterProps> = ({
+  onOpenVerifier,
+  onOpenContact,
+  onNavigateAbout,
+  onNavigateHome,
+}) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleAboutClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (onNavigateAbout) {
+      onNavigateAbout();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleHomeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (onNavigateHome) {
+      onNavigateHome();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (
@@ -23,14 +46,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenVerifier, onOpenContact })
           
           {/* Brand Col */}
           <div className="md:col-span-5 space-y-5">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-emerald-500 text-[#0B1E19] flex items-center justify-center font-extrabold text-base shadow-lg shadow-emerald-500/20">
+            <button
+              onClick={handleHomeClick}
+              className="flex items-center gap-3 text-left group focus:outline-none"
+            >
+              <div className="w-9 h-9 rounded-xl bg-emerald-500 text-[#0B1E19] flex items-center justify-center font-extrabold text-base shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
                 UA
               </div>
-              <span className="text-2xl font-black tracking-tight text-white">
+              <span className="text-2xl font-black tracking-tight text-white group-hover:text-emerald-300 transition-colors">
                 Upscale Agro
               </span>
-            </div>
+            </button>
 
             <p className="text-sm text-emerald-100/70 leading-relaxed max-w-sm font-normal">
               Precision agricultural verification, built directly on commercial ground truth. Transforming African farm production into auditable, investable, and resilient operations.
@@ -80,6 +106,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenVerifier, onOpenContact })
                 GROUND TRUTH
               </span>
               <ul className="space-y-3 text-emerald-100/70 font-medium">
+                <li>
+                  <button
+                    onClick={handleAboutClick}
+                    className="hover:text-white transition-colors text-left text-emerald-300 font-bold flex items-center gap-1"
+                  >
+                    <span>About Smartelco Mission</span>
+                    <span className="text-[9px] bg-emerald-500/20 text-emerald-300 px-1 py-0.2 rounded uppercase">
+                      New
+                    </span>
+                  </button>
+                </li>
                 <li>
                   <a href="#farm" className="hover:text-white transition-colors">
                     Adubiaro Living Lab

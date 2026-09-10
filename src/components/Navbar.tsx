@@ -4,9 +4,18 @@ import { ShieldCheck, Radio, ArrowRight, Menu, X, Sprout } from 'lucide-react';
 interface NavbarProps {
   onOpenVerifier: () => void;
   onOpenContact: () => void;
+  currentView?: 'home' | 'about';
+  onNavigateHome?: () => void;
+  onNavigateAbout?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenVerifier, onOpenContact }) => {
+export const Navbar: React.FC<NavbarProps> = ({
+  onOpenVerifier,
+  onOpenContact,
+  currentView = 'home',
+  onNavigateHome,
+  onNavigateAbout,
+}) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -17,6 +26,33 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenVerifier, onOpenContact })
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleBrandClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (onNavigateHome) {
+      onNavigateHome();
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleAboutClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (onNavigateAbout) {
+      onNavigateAbout();
+    }
+  };
+
+  const handleSectionLink = (e: React.MouseEvent, hash: string) => {
+    if (currentView === 'about' && onNavigateHome) {
+      e.preventDefault();
+      onNavigateHome();
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  };
 
   return (
     <header
@@ -33,8 +69,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenVerifier, onOpenContact })
           {/* Brand Logo - Smartelco style */}
           <a
             href="#"
+            onClick={handleBrandClick}
             id="nav-brand-link"
-            className="flex items-center gap-3 group focus:outline-none"
+            className="flex items-center gap-3 group focus:outline-none cursor-pointer"
           >
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#133229] to-[#0B1E19] flex items-center justify-center shadow-md shadow-emerald-950/20 group-hover:scale-105 transition-transform duration-200">
               <Sprout className="w-5 h-5 text-emerald-400 stroke-[2.2]" />
@@ -45,9 +82,35 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenVerifier, onOpenContact })
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-8 text-[14.5px] font-medium text-gray-600">
+          <nav className="hidden lg:flex items-center gap-7 text-[14px] font-medium text-gray-600">
+            <button
+              onClick={handleBrandClick}
+              id="nav-link-home"
+              className={`hover:text-[#133229] transition-colors py-1 cursor-pointer font-medium ${
+                currentView === 'home' ? 'text-[#133229] font-bold' : ''
+              }`}
+            >
+              Home
+            </button>
+            <button
+              onClick={handleAboutClick}
+              id="nav-link-about"
+              className={`hover:text-[#133229] transition-colors py-1 cursor-pointer flex items-center gap-1.5 ${
+                currentView === 'about'
+                  ? 'text-emerald-700 font-bold bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200/70'
+                  : 'font-medium'
+              }`}
+            >
+              <span>About Us</span>
+              {currentView !== 'about' && (
+                <span className="text-[10px] uppercase font-bold text-emerald-700 bg-emerald-100/70 px-1.5 py-0.2 rounded-md">
+                  New
+                </span>
+              )}
+            </button>
             <a
               href="#mission"
+              onClick={(e) => handleSectionLink(e, '#mission')}
               id="nav-link-mission"
               className="hover:text-[#133229] transition-colors py-1"
             >
@@ -55,6 +118,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenVerifier, onOpenContact })
             </a>
             <a
               href="#products"
+              onClick={(e) => handleSectionLink(e, '#products')}
               id="nav-link-products"
               className="hover:text-[#133229] transition-colors py-1"
             >
@@ -62,6 +126,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenVerifier, onOpenContact })
             </a>
             <a
               href="#sdgs"
+              onClick={(e) => handleSectionLink(e, '#sdgs')}
               id="nav-link-sdgs"
               className="hover:text-[#133229] transition-colors py-1 flex items-center gap-1"
             >
@@ -70,6 +135,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenVerifier, onOpenContact })
             </a>
             <a
               href="#farm"
+              onClick={(e) => handleSectionLink(e, '#farm')}
               id="nav-link-farm"
               className="hover:text-[#133229] transition-colors py-1"
             >
@@ -77,6 +143,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenVerifier, onOpenContact })
             </a>
             <a
               href="#pipeline"
+              onClick={(e) => handleSectionLink(e, '#pipeline')}
               id="nav-link-pipeline"
               className="hover:text-[#133229] transition-colors py-1"
             >
@@ -84,6 +151,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenVerifier, onOpenContact })
             </a>
             <a
               href="#calculator"
+              onClick={(e) => handleSectionLink(e, '#calculator')}
               id="nav-link-calculator"
               className="hover:text-[#133229] transition-colors py-1"
             >
@@ -145,16 +213,47 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenVerifier, onOpenContact })
             <span>Adubiaro Node Online • Osun State, Nigeria</span>
           </div>
           <div className="flex flex-col space-y-1 text-sm font-medium text-gray-700">
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                if (onNavigateHome) onNavigateHome();
+              }}
+              className={`text-left py-2.5 px-3 rounded-xl transition-colors ${
+                currentView === 'home' ? 'bg-emerald-50 text-emerald-900 font-bold' : 'hover:bg-slate-50'
+              }`}
+            >
+              Home Overview
+            </button>
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                if (onNavigateAbout) onNavigateAbout();
+              }}
+              className={`text-left py-2.5 px-3 rounded-xl transition-colors flex items-center justify-between ${
+                currentView === 'about' ? 'bg-emerald-50 text-emerald-900 font-bold' : 'hover:bg-slate-50'
+              }`}
+            >
+              <span>About Us (Smartelco Mission)</span>
+              <span className="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-bold uppercase">
+                New
+              </span>
+            </button>
             <a
               href="#mission"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => {
+                setMobileMenuOpen(false);
+                handleSectionLink(e, '#mission');
+              }}
               className="py-2.5 px-3 hover:bg-slate-50 rounded-xl"
             >
               The Trust Gap
             </a>
             <a
               href="#products"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => {
+                setMobileMenuOpen(false);
+                handleSectionLink(e, '#products');
+              }}
               className="py-2.5 px-3 hover:bg-slate-50 rounded-xl"
             >
               The Stack (Kulima, Portal, Trace)
