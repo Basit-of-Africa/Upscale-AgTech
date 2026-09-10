@@ -1,0 +1,6 @@
+{
+  "name": "Upscale Agro — Agricultural Technology",
+  "description": "Production-grade agricultural technology and verification stack making farm production measurable, intelligent, and verifiable.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
