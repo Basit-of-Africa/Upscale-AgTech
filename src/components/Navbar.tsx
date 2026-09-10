@@ -39,20 +39,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenVerifier, onOpenContact })
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#133229] to-[#0B1E19] flex items-center justify-center shadow-md shadow-emerald-950/20 group-hover:scale-105 transition-transform duration-200">
               <Sprout className="w-5 h-5 text-emerald-400 stroke-[2.2]" />
             </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-sans text-[20px] font-bold tracking-tight text-[#133229]">
-                  Upscale <span className="text-emerald-600 font-extrabold">AgTech</span>
-                </span>
-                <span className="inline-flex items-center gap-1 font-mono text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 font-semibold border border-emerald-200/60">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                  Lab Live
-                </span>
-              </div>
-              <div className="font-sans text-[11px] text-gray-500 font-medium">
-                Agricultural Technology & Intelligence
-              </div>
-            </div>
+            <span className="font-sans text-[20px] font-bold tracking-tight text-[#133229]">
+              Upscale <span className="text-emerald-600 font-extrabold">AgTech</span>
+            </span>
           </a>
 
           {/* Desktop Navigation Links */}
