@@ -90,33 +90,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({
     },
   ];
 
-  const teamMembers = [
-    {
-      name: 'Israel Smart',
-      role: 'Founder & Chief Agri-Tech Innovator',
-      bio: 'Award-winning climate advocate and social innovator from Nigeria. Recipient of the UN-Habitat Scroll of Honour and Global Citizen recognition; 2026 .ORG Impact Awards Finalist.',
-      badge: 'Founder',
-    },
-    {
-      name: 'Dr. Amina Bello',
-      role: 'Head of Agronomy & Hydroponic Sciences',
-      bio: 'Specialist in arid-zone crop nutrition and recirculating nutrient formulation with 14+ years advancing commercial cereal and root-crop yields across Sub-Saharan Africa.',
-      badge: 'Agronomy',
-    },
-    {
-      name: 'Eng. Babatunde Adeleke',
-      role: 'VP of Embedded Hardware & IoT Telemetry',
-      bio: 'Pioneered low-cost, solar-resilient LoRaWAN root-zone soil and water telemetry nodes designed specifically for remote African farm microclimates.',
-      badge: 'Hardware',
-    },
-    {
-      name: 'Chidinma Okonjo',
-      role: 'Director of Farmer Cooperative Networks',
-      bio: 'Leads our 70/30 smallholder training, onboarding, and off-taker linkage operations, supporting hundreds of local farmers in transition to precision agriculture.',
-      badge: 'Cooperative',
-    },
-  ];
-
   const sdgs = [
     {
       number: 'SDG 2',
@@ -388,63 +361,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                 <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                   {sdg.impact}
                 </p>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* Leadership & People */}
-      <section className="py-20 lg:py-28 bg-[#F8FAF9]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="max-w-3xl mb-14 space-y-4">
-            <div className="inline-flex items-center gap-2 text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200/80 uppercase tracking-wider">
-              <Users className="w-3.5 h-3.5 text-emerald-600" />
-              <span>LEADERSHIP & AGRONOMY TEAM</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-[#133229] tracking-tight">
-              Led by African innovators with hands-on field experience.
-            </h2>
-            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-              Our multidisciplinary team unites agronomic researchers, embedded hardware engineers, and rural cooperative directors.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className="card-elevation p-6 bg-white rounded-3xl border border-slate-200/80 flex flex-col justify-between space-y-4"
-              >
-                <div className="space-y-3">
-                  <div className="w-14 h-14 rounded-2xl bg-emerald-700 text-white flex items-center justify-center font-bold text-lg shadow-md shadow-emerald-800/20">
-                    {member.name.split(' ').map((n) => n[0]).join('')}
-                  </div>
-
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-bold text-[#133229]">
-                        {member.name}
-                      </h3>
-                    </div>
-                    <div className="text-xs text-emerald-700 font-semibold mt-0.5">
-                      {member.role}
-                    </div>
-                  </div>
-
-                  <p className="text-xs text-gray-500 leading-relaxed">
-                    {member.bio}
-                  </p>
-                </div>
-
-                <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-[11px] font-mono text-gray-400 uppercase tracking-wider">
-                    {member.badge}
-                  </span>
-                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                </div>
               </div>
             ))}
           </div>

@@ -43,17 +43,6 @@ export const Navbar: React.FC<NavbarProps> = ({
     }
   };
 
-  const handleSectionLink = (e: React.MouseEvent, hash: string) => {
-    if (currentView === 'about' && onNavigateHome) {
-      e.preventDefault();
-      onNavigateHome();
-      setTimeout(() => {
-        const el = document.querySelector(hash);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    }
-  };
-
   return (
     <header
       id="site-header"
@@ -148,17 +137,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
-                if (onNavigateHome) onNavigateHome();
-              }}
-              className={`text-left py-2.5 px-3 rounded-xl transition-colors ${
-                currentView === 'home' ? 'bg-emerald-50 text-emerald-900 font-bold' : 'hover:bg-slate-50'
-              }`}
-            >
-              Home Overview
-            </button>
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
                 if (onNavigateAbout) onNavigateAbout();
               }}
               className={`text-left py-2.5 px-3 rounded-xl transition-colors flex items-center justify-between ${
@@ -170,55 +148,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                 New
               </span>
             </button>
-            <a
-              href="#mission"
-              onClick={(e) => {
-                setMobileMenuOpen(false);
-                handleSectionLink(e, '#mission');
-              }}
-              className="py-2.5 px-3 hover:bg-slate-50 rounded-xl"
-            >
-              The Trust Gap
-            </a>
-            <a
-              href="#products"
-              onClick={(e) => {
-                setMobileMenuOpen(false);
-                handleSectionLink(e, '#products');
-              }}
-              className="py-2.5 px-3 hover:bg-slate-50 rounded-xl"
-            >
-              The Stack (Kulima, Portal, Trace)
-            </a>
-            <a
-              href="#sdgs"
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-2.5 px-3 hover:bg-slate-50 rounded-xl flex items-center justify-between"
-            >
-              <span>Our SDGs Impact</span>
-              <span className="text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-semibold">SDGs</span>
-            </a>
-            <a
-              href="#farm"
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-2.5 px-3 hover:bg-slate-50 rounded-xl"
-            >
-              Adubiaro Living Lab
-            </a>
-            <a
-              href="#pipeline"
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-2.5 px-3 hover:bg-slate-50 rounded-xl"
-            >
-              Process Flow
-            </a>
-            <a
-              href="#calculator"
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-2.5 px-3 hover:bg-slate-50 rounded-xl"
-            >
-              Risk & Dividend Tool
-            </a>
           </div>
           <div className="pt-2 flex flex-col gap-2">
             <button
