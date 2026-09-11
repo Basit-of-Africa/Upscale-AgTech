@@ -50,7 +50,7 @@ export const PartnerCTA: React.FC<PartnerCTAProps> = ({ isModalOpen, onOpenModal
                   <span>EXPANDING PILOT FARMS & OFF-TAKER NETWORKS</span>
                 </div>
 
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight leading-tight text-white">
                   Building or operating an agricultural enterprise that needs verified certainty?
                 </h2>
 

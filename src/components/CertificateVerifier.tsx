@@ -254,7 +254,7 @@ export const CertificateVerifier: React.FC<CertificateVerifierProps> = ({
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
             <span>PUBLIC EVIDENCE ENGINE</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#133229] tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-[#133229] tracking-tight leading-tight">
             Verify an actual harvest record.
           </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed font-normal">

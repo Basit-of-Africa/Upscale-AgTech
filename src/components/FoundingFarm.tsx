@@ -16,7 +16,7 @@ export const FoundingFarm: React.FC = () => {
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
             <span>FOUNDING LIVING LAB</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#133229] tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-[#133229] tracking-tight leading-tight">
             Adubiaro Farms — Our Living Agritech Laboratory
           </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed font-normal">
@@ -87,7 +87,7 @@ export const FoundingFarm: React.FC = () => {
 
           {/* Right: Partnership Details & Specs */}
           <div className="lg:col-span-7 space-y-6">
-            <h3 className="text-3xl font-extrabold text-[#133229]">
+            <h3 className="text-3xl font-normal text-[#133229]">
               Real commercial seasons, never synthetic proxies.
             </h3>
             
