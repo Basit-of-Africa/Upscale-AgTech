@@ -29,9 +29,13 @@ export const TelemetryTicker: React.FC = () => {
   return (
     <div
       id="telemetry-bar"
-      className="bg-[#0B1E19] border-b border-emerald-900/30 text-[11.5px] font-mono text-emerald-100/80 py-2.5 overflow-x-auto select-none"
+      className="bg-[#0B1E19] border-b border-emerald-900/30 text-[11.5px] font-montserrat text-emerald-100/80 py-2.5 overflow-x-auto select-none"
+      style={{ fontFamily: "'Montserrat', sans-serif" }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6 min-w-[800px]">
+      <div
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6 min-w-[800px] font-montserrat"
+        style={{ fontFamily: "'Montserrat', sans-serif" }}
+      >
         {/* Node status */}
         <div className="flex items-center gap-2.5 flex-shrink-0">
           <span className="relative flex h-2 w-2">

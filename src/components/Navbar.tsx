@@ -82,11 +82,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               }`}
             >
               <span>About Us</span>
-              {currentView !== 'about' && (
-                <span className="text-[10px] uppercase font-bold text-emerald-700 bg-emerald-100/70 px-1.5 py-0.2 rounded-md">
-                  New
-                </span>
-              )}
             </button>
           </nav>
 
@@ -144,9 +139,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               }`}
             >
               <span>About Us (Smartelco Mission)</span>
-              <span className="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-bold uppercase">
-                New
-              </span>
             </button>
           </div>
           <div className="pt-2 flex flex-col gap-2">
