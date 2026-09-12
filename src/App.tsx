@@ -62,9 +62,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F8FAF9] text-[#133229] selection:bg-emerald-600 selection:text-white font-sans">
-      {/* Real-time Field Telemetry Stream */}
-      <TelemetryTicker />
-
       {/* Main Navigation Header */}
       <Navbar
         currentView={currentView}
@@ -89,6 +86,9 @@ export default function App() {
               onOpenVerifierWithPlot={handleOpenVerifierWithPlot}
               onOpenContact={() => setPartnerModalOpen(true)}
             />
+
+            {/* Real-time Field Telemetry Stream */}
+            <TelemetryTicker />
 
             {/* 02. The Mission & Problem: The Trust Gap */}
             <TrustGap />

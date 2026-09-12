@@ -29,7 +29,7 @@ export const TelemetryTicker: React.FC = () => {
   return (
     <div
       id="telemetry-bar"
-      className="bg-[#0B1E19] border-b border-emerald-900/30 text-[11.5px] font-montserrat text-emerald-100/80 py-2.5 overflow-x-auto select-none"
+      className="bg-[#0B1E19] border-y border-emerald-900/30 text-[11.5px] font-montserrat text-emerald-100/80 py-2.5 overflow-x-auto select-none"
       style={{ fontFamily: "'Montserrat', sans-serif" }}
     >
       <div
